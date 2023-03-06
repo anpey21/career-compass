@@ -53,30 +53,4 @@
   margin-bottom: 1rem;
 }
 
-.btn-flat {
-  background: #7093ba;
-  color: #fff;
-  border: none;
-  font-size: 1rem;
-  padding: .5rem 1rem;
-  border-radius: .25rem;
-  cursor: pointer;
-}
 
-.btn-flat:hover, .btn-flat:focus {
-  background-blend-mode: darken;
-}
-
-.btn-ghost {
-  background-color: none;
-  color: #7093ba;
-  border: 1px solid #7093ba;
-  font-size: 1rem;
-  padding: .5rem 1rem;
-  border-radius: .25rem;
-  cursor: pointer;
-}
-
-.btn-flat + .btn-ghost {
-  margin-left: .25rem;
-}

@@ -1,0 +1,32 @@
+.btn-flat {
+  background: $text-pink;
+  color: $font-white;
+  border: none;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.btn-flat:hover, .btn-flat:focus {
+  background-blend-mode: darken;
+}
+
+.btn-ghost {
+  background-color: none;
+  color: $text-pink;
+  border: 1px solid $text-pink;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.btn-flat + .btn-ghost {
+  margin-left: .25rem;
+}
+
+.btn-ghost:hover, .btn-ghost:focus {
+  background-color: $text-pink;
+  color: $font-white;
+}

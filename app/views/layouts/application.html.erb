@@ -12,15 +12,7 @@
     <% unless devise_controller? %>
       <%= render "shared/navbar" %>
     <% end %>
-    <!-- alerts -->
-    <% flash.each do |type, msg| %>
-      <div id="alert" class="alert alert-info">
-        <%= msg %>
-      </div>
-    <% end %>
-    <!-- end of alerts -->
     <%= render "shared/flashes" %>
     <%= yield %>
-    <%= render "shared/flashes" %>
   </body>
 </html>

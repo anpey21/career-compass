@@ -22,13 +22,15 @@
 
 .hero-text h1 {
   font-size: 64px;
-  font-weight: $regular-font;
+  font-weight: $medium-bold;
   color: $primary-pink;
+  font-family: 'Nunito', sans-serif;
 }
 
 .hero-text p {
   max-width: 500px;
   padding-top: 24px;
+  padding-bottom: 32px;
   color: $font-white;
   font-size: 24px;
   line-height: 32px;
@@ -37,14 +39,43 @@
 .logo-text {
   font-size: 14px;
   font-weight: $regular-font;
-  color: $primary-pink;
+  color: $text-pink;
   margin: 0;
 }
 
 
 .hero-footer {
   display: flex;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+}
+
+.landing-pink-text {
+  font-size: 24px;
+  font-family: 'nunito', sans-serif;
+  font-weight: 400;
+  color: $text-pink;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.circle-img {
+  width: 150px;
+}
+
+.what-we-offer-container {
+  background-image: url(asset-path("landingsunrise.png"));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+}
+
+.testimonials-container {
+  background-color: $bg-grey;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
 }

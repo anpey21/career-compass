@@ -11,3 +11,16 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/dashboard";
+
+@import "components/buttons";
+@import "components/cards";
+@import "components/chart";
+@import "components/containers";
+@import "components/cards";
+
+body {
+  background-color: $bg-grey;
+  color: $font-white;
+  margin: 0 auto;
+  font-family: $body-font;
+}

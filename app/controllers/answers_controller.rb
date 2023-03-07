@@ -14,6 +14,10 @@ class AnswersController < ApplicationController
 
     # return array of arrays with priority name and answer score
     @priorities_plucked_with_names = @priorities.pluck(:priority_name, :score)
+    # return array of priority names ordered by score from highest to lowest with scores
+    @priorities_plucked_with_names_ordered_by_score = @priorities_plucked_with_names.sort_by do |_priority_name, score|
+      score
+    end.reverse
 
     # priority names ordered by score from highest to lowest
     @priorities_names_ordered_by_score = @priorities_plucked_with_names.sort_by do |_priority_name, score|

@@ -3,30 +3,33 @@
   color: $font-white;
   border: none;
   font-size: 1rem;
-  padding: .5rem 1rem;
-  border-radius: .25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
 }
 
-.btn-flat:hover, .btn-flat:focus {
+.btn-flat:hover,
+.btn-flat:focus {
   background-blend-mode: darken;
 }
 
 .btn-ghost {
   background-color: none;
-  color: $text-pink;
+  color: $font-white;
   border: 1px solid $text-pink;
   font-size: 1rem;
-  padding: .5rem 1rem;
-  border-radius: .25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  //transition time
+  transition: all 0.3s ease;
 }
 
 .btn-flat + .btn-ghost {
-  margin-left: .25rem;
+  margin-left: 0.25rem;
 }
 
-.btn-ghost:hover, .btn-ghost:focus {
-  background-color: $text-pink;
-  color: $font-white;
+.btn-ghost:hover,
+.btn-ghost:focus {
+  color: $primary-pink;
 }
 
 .hero-btn {

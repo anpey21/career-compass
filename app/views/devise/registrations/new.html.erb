@@ -1,31 +1,51 @@
-<div class="sign-up-container row">
-  <div class="col-8">
-    <h2>Sign up</h2>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "name" }%>
-        <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="row sign-up-container
+">
+  <div class="col-md-8 col-sm-12 flexi">
+    <div class="login-form center">
+      <div class="text-center pink bold">
+        <h2>Create A New Account</h2>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
-    <% end %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :name,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "name", class: "form-background" }%>
+          <%= f.input :email,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "email", class: "form-background" }%>
+          <%= f.input :password,
+          required: true,
+          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+          input_html: { autocomplete: "new-password", class: "form-background" } %>
+          <%= f.input :password_confirmation,
+          required: true,
+          input_html: { autocomplete: "new-password", class: "form-background" } %>
+        </div>
+        <div class="form-actions flexi">
+          <%= f.button :submit, "Sign up", class: "btn-ghost" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="col-4">
-    <%= render "devise/shared/links" %>
+  <div class="col-md-4 d-none d-md-block
+ right-panel-login
+">
+    <div class="center right-panel-content">
+      <div class="text-center pink bold">
+        <h2>Great to see you!</h2>
+      </div>
+      <div class="text-center subhead">
+        Unlock your potential and take control of your career
+      </div>
+      <div class="text-center mt-2">
+        Already have an account?
+      </div>
+      <div class="flexi">
+        <%= link_to "Log in", new_session_path(resource_name), class: "btn-ghost text-decoration-none text-center w-100" %>
+      </div>
+    </div>
   </div>
 </div>

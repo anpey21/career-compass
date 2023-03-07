@@ -1,22 +1,39 @@
 // Specific CSS for your home-page
 .hero-container {
-  background:  linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ), url(asset-path("staircase-high-res.jpg"));
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(asset-path("staircase-high-res.jpg"));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 80vh;
   color: $font-white;
   padding: 0;
+  padding-top: 8vh;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-header {
+  font-size: 64px;
+  color: $primary-pink;
+  padding-bottom: 30px;
+}
+
+.hero-cta {
+  display: flex;
+
+  padding-bottom: 20px;
+}
+
+.hero-content {
+  max-width: 500px;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
-  margin: 50px;
-  padding-top: 15%;
+  margin-left: 50px;
   align-items: left;
 }
 
@@ -24,7 +41,7 @@
   font-size: 64px;
   font-weight: $medium-bold;
   color: $primary-pink;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .hero-text p {
@@ -43,7 +60,6 @@
   margin: 0;
 }
 
-
 .hero-footer {
   display: flex;
   margin: 0 auto;
@@ -53,7 +69,7 @@
 
 .landing-pink-text {
   font-size: 24px;
-  font-family: 'nunito', sans-serif;
+  font-family: "nunito", sans-serif;
   font-weight: 400;
   color: $text-pink;
   text-align: center;
@@ -62,14 +78,20 @@
 
 .circle-img {
   width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
+.how-it-works-container {
+  height: 500px;
+}
 .what-we-offer-container {
   background-image: url(asset-path("landingsunrise.png"));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70vh;
+  height: 500px;
 }
 
 .what-we-offer-body {
@@ -79,11 +101,11 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 40px;
   padding-bottom: 50px;
 }
 
-.card-body {
+.square-home-card-body {
   font-size: 16px;
   font-weight: $regular-font;
   color: $font-white;
@@ -99,17 +121,22 @@
   color: $font-white;
 }
 
-
 .card-image > img {
   border-radius: 4px;
   width: 200px;
+  height: 200px;
+  object-fit: cover;
   line-height: 12px;
 }
 
 .card-italic {
   font-size: 12px;
-  color: $text-pink;
+  color: $font-white;
   padding: 0;
+}
+
+.p-30 {
+  padding-top: 30px;
 }
 
 .testimonials-container {
@@ -117,7 +144,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 500px;
+}
+
+.how-it-works-container {
+  height: 500px;
 }
 
 .circles-cards {
@@ -127,6 +158,14 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 40px;
+}
+
+.circle-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .circle-card-text {
@@ -137,6 +176,7 @@
   padding-top: 24px;
   padding-bottom: 32px;
   line-height: 32px;
+  width: 200px;
 }
 
 img {
@@ -147,6 +187,24 @@ img {
 @media (min-width: 100px) and (max-width: 575px) {
   .circles-cards {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 759px) {
+  .how-it-works-container {
+    height: 1000px;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 863px) {
+  .what-we-offer-container {
+    height: 900px;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1000px) {
+  .how-it-works-container {
+    height: 700px;
   }
 }
 

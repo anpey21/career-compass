@@ -16,7 +16,7 @@
     </div>
     <div class="col">
       <div class="chart-title text-center">Your Priorities</div>
-      <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#e21d60"], min: 0, max: 10, xtitle: "Score", options: {
+   <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#e21d60"], min: 0, max: 10, xtitle: "Score", options: {
   scales: {
     yAxes: [{
       display: false
@@ -34,7 +34,7 @@
       <div class="col">
         <div class="detail-bar-view">
           <div class="chart-title text-center">Detailed Comparison</div>
-          <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score") %>
+          <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score", legend: true) %>
         </div>
       </div>
       <div class="col">

@@ -12,8 +12,13 @@
 @import "pages/index";
 @import "components/buttons";
 @import "components/cards";
+@import "components/chart";
+@import "components/containers";
+@import "components/cards";
 
 body {
+  background-color: $bg-grey;
+  color: $font-white;
   margin: 0 auto;
   font-family: $body-font;
 }

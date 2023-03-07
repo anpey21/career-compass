@@ -1,0 +1,44 @@
+<div class="container-analytics-dash">
+  <div class="row">
+    <div class="col">
+      <div class="career-summary">
+        <div class="chart-title text-center">Your Total Score</div>
+        <%= column_chart(@career_options_and_scores, id: "users-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score"
+) %>
+      </div>
+    </div>
+    <div class="col text-center">
+      <div class="welcome">Welcome <span class="pink-bold"><%= current_user.name.capitalize %></span></div>
+      Your top scored career option is
+      <div class="top-option"><%= @top_career_option %></div>
+      <br>
+      Your responses show that you are a <span class="percentage"><%= @first_percentage %>%</span> fit for <%= @first_career_option.option %> and a <span class="percentage"><%= @second_percentage %>%</span> fit for <%= @second_career_option.option %>.
+    </div>
+    <div class="col">
+      <div class="chart-title text-center">Your Priorities</div>
+      <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#e21d60"], min: 0, max: 10, xtitle: "Score", options: {
+  scales: {
+    yAxes: [{
+      display: false
+    }],
+    xAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: 'Score'
+      }
+    }]
+  }
+}) %>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="detail-bar-view">
+          <div class="chart-title text-center">Detailed Comparison</div>
+          <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score") %>
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+</div>

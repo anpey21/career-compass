@@ -1,2 +1,44 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <%= image_tag "logo-simple.png" %>
+      <h5 class="logo-text">Take control of your career</h5>
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "Join Career Compass", root_path, class: "nav-link" %>
+            <%= link_to "Login", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%= image_tag "girl.jpg" %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+          </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<div class="hero-container">
+  <div class="hero-text">
+    <h1 class="hero-header">Career Compass</h1>
+    <br>
+      <p>
+        Whether you’re in the early stages of your career or just looking for extra guidance, we’re here to help you discover where you’ll find happiness in the world of work.
+      </p>
+      <%= link_to "Launch our decision wizard", root_path, class: "hero-btn" %>
+  </div>
+    <div class="hero-footer">
+      <p class= "hero-text">How our career decision system works</p>
+    </div>
+</div>

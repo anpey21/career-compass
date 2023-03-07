@@ -1,7 +1,3 @@
-* {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -52,5 +48,3 @@
 .card-footer {
   margin-bottom: 1rem;
 }
-
-

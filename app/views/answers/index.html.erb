@@ -7,20 +7,25 @@
       </div>
     </div>
     <div class="col text-center">
-      Your top scored career option is <strong><%= @top_career_option %></strong>.
+      Your top scored career option is
+      <div class="top-option"><%= @top_career_option %></div>
       <br>
-      Your responses show that you are a <%= @first_percentage %>% fit for <%= @first_career_option.option %> and a <%= @second_percentage %>% fit for <%= @second_career_option.option %>.
+      Your responses show that you are a <span class="percentage"><%= @first_percentage %>%</span> fit for <%= @first_career_option.option %> and a <span class="percentage"><%= @second_percentage %>%</span> fit for <%= @second_career_option.option %>.
     </div>
     <div class="col">
       <ul>
-        <%= @priorities_names_ordered_by_score.each_with_index do |priority, index| %>
+        <% @priorities_names_ordered_by_score.each_with_index do |priority, index| %>
           <li><%= index + 1 %>: <%= priority %></li>
         <% end %>
       </ul>
     </div>
     <div class="row">
-      <div class="detail-bar-view">
-        <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score") %>
+      <div class="col">
+        <div class="detail-bar-view">
+          <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score") %>
+        </div>
+      </div>
+      <div class="col">
       </div>
     </div>
   </div>

@@ -1,13 +1,15 @@
-.container-analytics-dash {
-  margin: 0 auto;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: $off-white;
-}
-
 .career-summary {
   width: 100%;
   height: 100%;
+}
+
+.top-option {
+  font-weight: bolder;
+  color: $primary-pink;
+  font-size: large;
+}
+
+.percentage {
+  color: $primary-pink;
+  font-weight: bold;
 }

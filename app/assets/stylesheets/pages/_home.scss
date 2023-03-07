@@ -1,1 +1,50 @@
 // Specific CSS for your home-page
+.hero-container {
+  background:  linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ), url(asset-path("herostaircase.png"));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: $font-white;
+  padding: 0;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  padding-top: 15%;
+  align-items: left;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  font-weight: $regular-font;
+  color: $primary-pink;
+}
+
+.hero-text p {
+  max-width: 500px;
+  padding-top: 24px;
+  color: $font-white;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.logo-text {
+  font-size: 14px;
+  font-weight: $regular-font;
+  color: $primary-pink;
+  margin: 0;
+}
+
+
+.hero-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}

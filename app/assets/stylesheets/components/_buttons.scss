@@ -1,0 +1,49 @@
+.btn-flat {
+  background: $text-pink;
+  color: $font-white;
+  border: none;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+.btn-flat:hover, .btn-flat:focus {
+  background-blend-mode: darken;
+}
+
+.btn-ghost {
+  background-color: none;
+  color: $text-pink;
+  border: 1px solid $text-pink;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+.btn-flat + .btn-ghost {
+  margin-left: .25rem;
+}
+
+.btn-ghost:hover, .btn-ghost:focus {
+  background-color: $text-pink;
+  color: $font-white;
+}
+
+.hero-btn {
+  display: flex;
+  background-color: $light-gray;
+  border-radius: 4px;
+  padding: 20px 20px;
+  width: 250px;
+  color: $text-pink;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  background-color: transparent;
+  border: 1px solid $text-pink;
+  color: $font-white;
+}

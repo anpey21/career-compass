@@ -27,6 +27,13 @@
   justify-content: center;
 }
 
+.flexi-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .pink {
   color: $primary-pink;
 }
@@ -53,4 +60,8 @@
 
 .form-background {
   background-color: #fa469205 !important;
+}
+
+.login-btn {
+  width: 200px;
 }

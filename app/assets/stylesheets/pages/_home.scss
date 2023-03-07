@@ -72,6 +72,16 @@
   height: 70vh;
 }
 
+.what-we-offer-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 50px;
+}
+
 .testimonials-container {
   background-color: $bg-grey;
   background-size: cover;

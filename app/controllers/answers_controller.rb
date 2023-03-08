@@ -11,7 +11,8 @@ class AnswersController < ApplicationController
     # @second_career_option = @career_options[-1]
     @questions = Question.all
     @questions.each do |question|
-      @answer = Answer.new(score: params[question.question], question: question, career_option_id: params[:career_option_id])
+      @answer = Answer.new(score: params[question.question], question:,
+                           career_option_id: params[:career_option_id])
       @answer.save
     end
 
@@ -31,7 +32,24 @@ class AnswersController < ApplicationController
     @questions = Question.all
     @priorities = Priority.where(user_id: current_user.id)
     @priority_names = @priorities.pluck(:priority_name)
+    @priority_score = @priorities.pluck(:priority_name, :score)
+    # first answer scores
+    @first_answer_scores = @first_answer.pluck(:score)
+    # combine priority names and first answer scores into a array of arrays
+    @first_answer_scores_with_priority_names = @priority_names.zip(@first_answer_scores)
+    # weight first answer scores by priority score
+    @first_answer_weighted_score_array = @first_answer_scores_with_priority_names.map.with_index do |(text, num), index|
+      [text, num.to_i * @priority_score[index][1]]
+    end
 
+    # second answer scores
+    @second_answer_scores = @second_answer.pluck(:score)
+    # combine priority names and second answer scores into a array of arrays
+    @second_answer_scores_with_priority_names = @priority_names.zip(@second_answer_scores)
+    # weight second answer scores by priority score
+    @second_answer_weighted_score_array = @second_answer_scores_with_priority_names.map.with_index do |(text, num), index|
+      [text, num.to_i * @priority_score[index][1]]
+    end
     # return array of arrays with priority_id and priority score
     @priorities_plucked = @priorities.pluck(:id, :score)
 
@@ -47,21 +65,15 @@ class AnswersController < ApplicationController
                                            score
                                          end.reverse.map { |priority_name, _score| priority_name }
 
-    # return array of arrays with question_id and answer score
-    first_answer = @first_answer.pluck(:question_id, :score)
-    second_answer = @second_answer.pluck(:question_id, :score)
-
-    # convert question_id to priority_id
-    first_answer_priority = convert_question_to_priority(first_answer)
-    second_answer_priority = convert_question_to_priority(second_answer)
-
     # multiply answer score by priority score
-    first_weighted_answer = weighted_answer(first_answer_priority)
-    second_weighted_answer = weighted_answer(second_answer_priority)
+    first_weighted_answer = @first_answer_weighted_score_array
+    second_weighted_answer = @second_answer_weighted_score_array
+    first_weighted_answer_scores_only = first_weighted_answer.map { |_priority_name, score| score }
+    second_weighted_answer_scores_only = second_weighted_answer.map { |_priority_name, score| score }
 
     # sum all weighted scores
-    @first_total_score = first_weighted_answer.sum
-    @second_total_score = second_weighted_answer.sum
+    @first_total_score =  @first_answer_weighted_score_array.reduce(0) { |total, (_, num)| total + num }
+    @second_total_score = @second_answer_weighted_score_array.reduce(0) { |total, (_, num)| total + num }
 
     # create a hash of the two career options and their total scores
     @career_options_and_scores = {
@@ -73,8 +85,8 @@ class AnswersController < ApplicationController
     @top_career_option = @career_options_and_scores.max_by { |_key, value| value }[0]
 
     # create a hash of the weighted answer scores for each career option and priority
-    @first_weighted_answer_hash = @priority_names.zip(first_weighted_answer).to_h
-    @second_weighted_answer_hash = @priority_names.zip(second_weighted_answer).to_h
+    @first_weighted_answer_hash = @priority_names.zip(first_weighted_answer_scores_only).to_h
+    @second_weighted_answer_hash = @priority_names.zip(second_weighted_answer_scores_only).to_h
     @first_weighted_answer_hash_transformed_with_job_title = { option: @first_career_option.option,
                                                                data: @first_weighted_answer_hash }
     @second_weighted_answer_hash_transformed_with_job_title = { option: @second_career_option.option,
@@ -96,14 +108,6 @@ class AnswersController < ApplicationController
       score = score.to_i
       priority_id = Question.find(question_id).priority_id
       [priority_id, score]
-    end
-  end
-
-  # multiply answer score by priority score
-  def weighted_answer(answer)
-    answer.map do |priority_id, score|
-      priority_score = @priorities_plucked.select { |id, _score| id == priority_id }.flatten[1].to_i
-      score * priority_score
     end
   end
 

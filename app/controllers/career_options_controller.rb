@@ -1,5 +1,7 @@
 class CareerOptionsController < ApplicationController
-
+  def new
+    @career_option = CareerOption.new
+  end
   def create
     @career_option = CareerOption.new(career_option_params)
     @career_option.user = current_user

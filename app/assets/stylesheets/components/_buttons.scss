@@ -33,16 +33,16 @@
 }
 
 .hero-btn {
-  display: flex;
   background-color: $light-gray;
   border-radius: 4px;
   padding: 20px 20px;
   width: 250px;
   color: $text-pink;
-  font-size: 16px;
+  font-size: 18px;
   transition: background 0.3s ease;
   opacity: 0.8;
   text-decoration: none;
+  text-align: center;
 }
 
 .hero-btn:hover {

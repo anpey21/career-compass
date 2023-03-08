@@ -1,9 +1,9 @@
 #dashboard {
   display: flex;
 
-  h1, h3{
-    color: #FA4692;
-  }
+  // h1, h3{
+  //   color: #FA4692;
+  // }
   p{
     color: whitesmoke;
     text-align: justify;
@@ -24,9 +24,9 @@
 }
 
 .cards {
-  display: grid;
-  //grid-template-columns: 1fr 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   justify-items: center;
   padding: 10px;
@@ -42,12 +42,13 @@
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   transition: all 0.3s ease;
 }
 
 .card-category:hover {
   transform: scale(1.03);
+  background-color: $primary-pink;
 }
 
 .sidebar-bg {
@@ -57,20 +58,20 @@
 border-color: #FA4692 !important;
 
 }
-.small-cards {
-  border: 1px solid rgb(231, 10, 139);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  border-radius: 5px;
-  padding: 20px;
-}
+// .small-cards {
+//   border: 1px solid rgb(231, 10, 139);
+//   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+//   text-align: center;
+//   border-radius: 5px;
+//   padding: 20px;
+// }
 
-.item {
-  display: grid;
-  //grid-template-columns: 1fr 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
+// .item {
+//   display: grid;
+//   //grid-template-columns: 1fr 1fr;
+//   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//   grid-gap: 20px;
+// }
 
 
 a {

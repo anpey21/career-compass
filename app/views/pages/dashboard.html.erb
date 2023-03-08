@@ -13,9 +13,10 @@
       <div>
         <div class="welcome">Welcome <%= @user.name.capitalize %>!</div>
       </div>
-      <%= link_to "Take our career challenge!", root_path, class:"btn-ghost text-center mt-5 w-270" %>
+      <%= link_to "Take our career challenge!", root_path, class:"btn-ghost text-center mt-5 w-270 h-40" %>
     </div>
     <div class="cards">
+      <div class="chart-title text-center mb-0">Recommended for you</div>
       <%= link_to "https://hbr.org/2023/02/career-sponsorship-is-a-two-way-street", class: "text-decoration-none " do %>
         <div class="card-category" >
           <div class="card-article-header">Career Sponsorship is a two way street</div>

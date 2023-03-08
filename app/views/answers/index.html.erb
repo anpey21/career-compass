@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="col text-center central-section-analytics">
-      <div class="welcome">Welcome <span class="pink-bold welcome"><%= current_user.name.capitalize %></span></div>
+      <div class="welcome">Welcome <span class="pink-bold welcome pink"><%= current_user.name.capitalize %></span></div>
       <div class="middle">
         Your top scored career option is
         <div class="top-option"><%= @top_career_option %></div>
@@ -33,16 +33,16 @@
     xAxes: [{
       scaleLabel: {
         display: true,
-        labelString: 'Score'
+        labelString: 'Priority'
       }
     }]
   }
 }) %>
     </div>
-    <div class="row">
+    <div class="row h-95">
       <div class="col">
         <div class="detail-bar-view">
-          <div class="chart-title text-center">Detailed Comparison</div>
+          <div class="chart-title text-center">Your scores comparison</div>
           <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score", legend: true) %>
         </div>
       </div>

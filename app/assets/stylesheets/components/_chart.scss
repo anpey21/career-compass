@@ -21,6 +21,10 @@
   margin-bottom: 10px;
 }
 
+.pink {
+  color: $primary-pink !important;
+}
+
 // article card
 .article-card {
   width: 32%;
@@ -90,4 +94,8 @@ a :hover {
 
 .chart-title {
   font-size: large;
+}
+
+.h-95 {
+  height: 95%;
 }

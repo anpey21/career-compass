@@ -48,7 +48,17 @@
 }
 
 .hero-btn:hover {
-  background-color: #f4f4f4c1;
-  border: 1px solid $text-pink;
+  border: 2px solid $text-pink;
+  color: $primary-pink;
+}
+
+.dashboard-btn {
+  border-radius: $border-radius;
+  color: $primary-pink;
+  border: 1px solid $primary-pink;
+  background-color: transparent;
+}
+
+.dashboard-btn:hover {
   color: $primary-pink;
 }

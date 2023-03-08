@@ -1,58 +1,51 @@
-<div id="dashboard">
-  <html>
-  <title>W3.CSS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <body>
-
+<div class="dashboard-page-container">
   <!-- Sidebar -->
-  <div class="w3-sidebar w3-bar-block w3-padding sidebar-bg w3-large" style="width:20%">
-    <h3 class="w3-bar-item">Tools</h3>
-    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-dark-grey">My Results</a>
-    <a href="#" class="w3-bar-item w3-button  w3-hover-none w3-hover-text-dark-grey">Carreer Challenge</a>
-    <a href="#" class="w3-bar-item w3-button  w3-hover-none w3-hover-text-dark-grey">Find a coach</a>
-    <a href="#" class="w3-bar-item w3-button  w3-hover-none w3-hover-text-dark-grey">Search our resourses</a>
+  <div class="w3-sidebar w3-bar-block w3-padding sidebar-bg w3-large pr-none
+" style="width:20%">
+    <div class="w3-bar-item mb-3 mt-4 welcome">Tools</div>
+    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-dark-grey mb-4">My Results</a>
+    <a href="#" class="w3-bar-item w3-button  w3-hover-none w3-hover-text-dark-grey mb-4">Career Challenge</a>
+    <a href="#" class="w3-bar-item w3-button  w3-hover-none w3-hover-text-dark-grey mb-4">Find a coach</a>
+    <a href="#" class="w3-bar-item w3-button  w3-hover-none w3-hover-text-dark-grey mb-4">Search our resourses</a>
   </div>
-
-  <div class="container mt-0" style="margin-left:20%">
-    <div class="container mt-0 content-container">
-      <div class="d-flex justify-content-between">
-        <div>
-          <span class="d-flex"><h1 class="welcome">Welcome,</h1> <h1> <%= @user.name.capitalize %>!</h1></span>
-        </div>
-        <%= link_to "Take our career challenge!", root_path, class:"hero-btn dashboard-btn text-center" %>
+  <div class="container-dashboard mt-0 pe-4" style="margin-left:20%">
+    <div class="d-flex justify-content-between dashboard-banner">
+      <div>
+        <div class="welcome">Welcome <%= @user.name.capitalize %>!</div>
       </div>
-
-      <div class="cards">
+      <%= link_to "Take our career challenge!", root_path, class:"btn-ghost text-center mt-5 w-270" %>
+    </div>
+    <div class="cards">
+      <%= link_to "https://hbr.org/2023/02/career-sponsorship-is-a-two-way-street", class: "text-decoration-none " do %>
         <div class="card-category" >
-          <h3 class="cards-h3">Career Sponsorship is a two way street</h3>
-          <p>Sponsorship is a vital mechanism for advancing the careers of junior employees. But it’s not just a one-way relationship in which everything flows from the sponsor to the sponsee. What sponsees bring to the relationship is just as important.</p>
+          <div class="card-article-header">Career Sponsorship is a two way street</div>
+          <div class="card-article-description">Sponsorship is a vital mechanism for advancing the careers of junior employees. But it’s not just a one-way relationship in which everything flows from the sponsor to the sponsee. What sponsees bring to the relationship is just as important.</div>
         </div>
-
+      <% end %>
+      <%= link_to "https://hbr.org/2022/12/whats-holding-back-your-career-development", class: "text-decoration-none " do %>
         <div class="card-category">
-          <h3 class="cards-h3">What’s holding back your career development?</h3>
-          <p>Career challenges like reorganizations, layoffs, and a lack of personal fulfillment can feel like big bumps in the road, but instead of seeing them as obstacles, start to look for the opportunities. Personal career development is critical for resilience.</p>
+          <div class="card-article-header">What’s holding back your career development?</div>
+          <div class="card-article-description">Career challenges like reorganizations, layoffs, and a lack of personal fulfillment can feel like big bumps in the road, but instead of seeing them as obstacles, start to look for the opportunities. Personal career development is critical for resilience.</div>
         </div>
-
+      <% end %>
+      <%= link_to "https://hbr.org/2022/12/its-never-too-late-to-switch-careers", class: "text-decoration-none " do %>
         <div class="card-category" >
-          <h3>It’s never too late to switch career</h3>
-          <p>…and it doesn’t need to shake up your entire world.</p>
+          <div class="card-article-header">It’s never too late to switch career</div>
+          <div class="card-article-description">…and it doesn’t need to shake up your entire world.</div>
         </div>
-
+      <% end %>
+      <%= link_to "https://hbr.org/2022/09/how-to-build-a-career-in-a-new-industry", class: "text-decoration-none " do %>
         <div class="card-category" >
-          <h3>How to build a career in a new industry</h3>
-          <p>Reinventing yourself doesn’t have to mean starting from scratch.</p>
+          <div class="card-article-header">How to build a career in a new industry</div>
+          <div class="card-article-description">Reinventing yourself doesn’t have to mean starting from scratch.</div>
         </div>
-
+      <% end %>
+      <%= link_to "https://hbr.org/2022/09/setting-career-goals-when-you-feel-overwhelmed", class: "text-decoration-none " do %>
         <div class="card-category" >
-          <h3>Setting Career goals when you feel overwhelmed</h3>
-          <p>You can grow out of your slump.</p>
+          <div class="card-article-header">Setting Career goals when you feel overwhelmed</div>
+          <div class="card-article-description">You can grow out of your slump.</div>
         </div>
-      </div>
-
-      </div>
+      <% end %>
     </div>
-    </div>
-  </body>
-  </html>
+  </div>
 </div>

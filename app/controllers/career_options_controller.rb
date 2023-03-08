@@ -1,19 +1,10 @@
 class CareerOptionsController < ApplicationController
-  def new
-    @career_option = CareerOption.new
-    @user = current_user
-  end
 
   def create
-    @career_option = CareerOption.new(career_options_params)
+    @career_option = CareerOption.new(career_option_params)
     @career_option.user = current_user
     if @career_option.save
-      if current_user.career_options.count == 1
-        @career_option = CareerOption.new
-        redirect_to new_career_option_path
-      elsif current_user.career_options.count == 2
-        redirect_to root_path
-      end
+      redirect_to new_answer_path
     else
       render :new
     end
@@ -21,7 +12,7 @@ class CareerOptionsController < ApplicationController
 
   private
 
-  def career_options_params
-    params.require(:career_option).permit(:option)
+  def career_option_params
+    params.require(:career_option).permit(:name, :description, :user_id)
   end
 end

@@ -2,17 +2,17 @@
   <!-- Sidebar -->
   <div class="w3-sidebar w3-bar-block w3-padding sidebar-bg w3-large pr-none" style="width:20%">
     <div class="w3-bar-item mb-3 mt-4 welcome">Tools</div>
-    <a href="#" class="w3-bar-item w3-button hover-sidebar-list mb-4">My Results</a>
-    <a href="#" class="w3-bar-item w3-button  hover-sidebar-list mb-4">Career Challenge</a>
-    <a href="#" class="w3-bar-item w3-button  hover-sidebar-list mb-4">Find a coach</a>
-    <a href="#" class="w3-bar-item w3-button  hover-sidebar-list mb-4">Search our resourses</a>
+    <%= link_to "My Results", answers_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <%= link_to "Career Challenge", new_career_option_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <%= link_to "Find a coach", root_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <%= link_to "Search our resources", root_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
   </div>
   <div class="container-dashboard mt-0 pe-4" style="margin-left:20%">
     <div class="d-flex justify-content-between dashboard-banner">
       <div>
         <div class="welcome">Welcome <%= @user.name.capitalize %>!</div>
       </div>
-      <%= link_to "Take our career challenge!", root_path, class:"btn-ghost text-center mt-5 w-270 h-40" %>
+      <%= link_to "Take our career challenge!", new_career_option_path, class:"btn-ghost text-center mt-5 w-270 h-40" %>
     </div>
     <div class="cards">
       <div class="chart-title text-center mb-0">Recommended for you</div>

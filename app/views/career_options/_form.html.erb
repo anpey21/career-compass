@@ -1,0 +1,6 @@
+<h1>Please enter your <%= current_user.career_options.count == 0 ? "first" : "second" %> option</h1>
+
+<%= simple_form_for @career_option do |f| %>
+  <%= f.input :option, label: false, input_html: {class: "form-option"} %>
+  <%= f.submit "Next", :class => "hero-btn align-center" %>
+<% end %>

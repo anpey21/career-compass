@@ -1,121 +1,86 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <%= image_tag "logo-simple.png" %>
-      <!-- How to disappear the avatar until you're signed in? Will take from mentorme-->
-      <h5 class="logo-text">Take control of your career</h5>
-    </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to "Join CareerCompass", root_path, class: "nav-link" %>
-            <%= link_to "Login", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%= image_tag "girl.jpg" %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-          </ul>
-      </div>
+<div class="hero-container">
+  <div class="hero-header">CareerCompass</div>
+  <div class="hero-content">
+    <div class="hero-content-text">
+      Whether you’re in the early stages of your career or just looking for extra guidance, we’re here to help you discover where you’ll find happiness in the world of work.
+    </div>
+    <div class="hero-cta">
+      <%= link_to "Launch our decision wizard", root_path, class: "hero-btn" %>
     </div>
   </div>
-  </div>
 </div>
-<div class="hero-container">
-  <div class="hero-text">
-    <h1 class="hero-header">CareerCompass</h1>
-    <br>
-      <p>
-        Whether you’re in the early stages of your career or just looking for extra guidance, we’re here to help you discover where you’ll find happiness in the world of work.
-      </p>
-      <%= link_to "Launch our decision wizard", root_path, class: "hero-btn" %>
-  </div>
-    <div class="hero-footer">
-      <%# <%= # Insert animated arrows here %>
-  </div>
-</div>
-
 <div class="how-it-works-container">
-      <p class= "landing-pink-text">How our career decision system works</p>
-
-  <div class="circles-cards">
+  <div class= "landing-pink-text">How our career decision system works</div>
+  <div class="circles-cards p-30">
     <div class="circle-card-body">
-      <%= image_tag "hatgirls.png", class: "circle-img" %>
-        <p class="circle-card-text">Tell us your options</p>
+      <%= image_tag "option1.jpg", class: "circle-img" %>
+      <div class="circle-card-text">Tell us your options</div>
     </div>
     <div class="circle-card-body">
       <%= image_tag "lightbulb.png", class: "circle-img" %>
-        <p class="circle-card-text">Fill out the decision wizard</p>
+      <div class="circle-card-text">Fill out the decision wizard</div>
     </div>
     <div class="circle-card-body">
       <%= image_tag "laptopguys.png", class: "circle-img" %>
-        <p class="circle-card-text">See which career path to take</p>
+      <div class="circle-card-text">See which career path to take</div>
     </div>
   </div>
 </div>
 <div class="what-we-offer-container">
-  <p class= "landing-pink-text">What we offer</p>
+  <div class= "landing-pink-text">What we offer</div>
   <div class="what-we-offer-body">
-    <div class="card-body">
-    <div class="circle-card-body">
-      <div class="card-image">
-        <%= image_tag "forest.png" %>
-      </div>
-      <p class= "offer-card-text">Decision Wizard</p>
-      <span class="card-italic"><em>Connect with world class mentors</em></span>
-      </div>
-    </div>
-    <div class="card-body">
-    <div class="circle-card-body">
-      <div class="card-image">
-        <%= image_tag "forest.png" %>
-      </div>
-      <p class= "offer-card-text">Resources</p>
-      <span class="card-italic"><em>Connect with world class mentors</em></span>
-      </div>
-    </div>
-    <div class="card-body">
-    <div class="circle-card-body">
-      <div class="card-image">
-        <%= image_tag "forest.png" %>
-      </div>
-      <p class= "offer-card-text">Coaching</p>
-      <span class="card-italic"><em>Connect with world class mentors</em></span>
-    </div>
-    </div>
-    <div class="card-body">
-    <div class="circle-card-body">
-      <div class="card-image">
-        <%= image_tag "forest.png" %>
-      </div>
-      <p class= "offer-card-text">Goal Tracking</p>
-      <span class="card-italic"><em>Connect with world class mentors</em></span>
-      </div>
-    </div>
-  </div>
-
-</div>
-  <p class="landing-pink-text">Testimonials</p>
-    <div class="circles-cards">
+    <div class="square-home-card-body">
       <div class="circle-card-body">
-        <%= image_tag "lightbulb.png", class: "circle-img"  %>
-          <p class="circle-card-text">Donald says</p>
+        <div class="card-image">
+          <%= image_tag "decision.jpg" %>
+        </div>
+        <div class= "offer-card-text">Decision Wizard</div>
+        <span class="card-italic"><em>Use data to help decide between two career options</em></span>
       </div>
-    <div class="circle-card-body">
-      <%= image_tag "lightbulb.png", class: "circle-img"  %>
-        <p class="circle-card-text">Donald says</p>
     </div>
-    <div class="circle-card-body">
-     <%= image_tag "lightbulb.png", class: "circle-img"  %>
-        <p class="circle-card-text">Donald says</p>
+    <div class="square-home-card-body">
+      <div class="circle-card-body">
+        <div class="card-image">
+          <%= image_tag "career-resources.jpg" %>
+        </div>
+        <div class= "offer-card-text">Resources</div>
+        <span class="card-italic"><em>Find resources to help you with your career</em></span>
+      </div>
+    </div>
+    <div class="square-home-card-body">
+      <div class="circle-card-body">
+        <div class="card-image">
+          <%= image_tag "coaching.jpg" %>
+        </div>
+        <div class= "offer-card-text">Coaching</div>
+        <span class="card-italic"><em>Connect with world class coaches</em></span>
+      </div>
+    </div>
+    <div class="square-home-card-body">
+      <div class="circle-card-body">
+        <div class="card-image">
+          <%= image_tag "goals.jpg" %>
+        </div>
+        <div class= "offer-card-text">Goal Tracking</div>
+        <span class="card-italic"><em>Track your career goals</em></span>
+      </div>
     </div>
   </div>
+</div>
+<div class="testimonials-container">
+  <div class="landing-pink-text">Testimonials</div>
+  <div class="circles-cards">
+    <div class="circle-card-body">
+      <%= image_tag "Katrina.jpg", class: "circle-img"  %>
+      <div class="circle-card-text">"I love how CareerCompass takes a really data driven approach to helping me make my decision! It helped me decide to quit my job and go back to school!"</div>
+    </div>
+    <div class="circle-card-body">
+      <%= image_tag "Julia.png", class: "circle-img"  %>
+      <div class="circle-card-text">"I'm normally a really indecisive person, CareerCompass helped me make a decision about two offers so much quicker than it normally would"</div>
+    </div>
+    <div class="circle-card-body">
+      <%= image_tag "Andreas.jpg", class: "circle-img"  %>
+      <div class="circle-card-text">"CareerCompass helped me decide to take a risk and follow my passion by helping me put what I knew in my head into data in a really easy way"</div>
+    </div>
+  </div>
+</div>

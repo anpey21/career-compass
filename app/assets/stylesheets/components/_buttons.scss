@@ -35,18 +35,20 @@
 .hero-btn {
   background-color: $light-gray;
   border-radius: 4px;
-  padding: 20px 20px;
   width: 250px;
+  height: 40px;
+  margin-top: 20px;
   color: $text-pink;
   font-size: 18px;
   transition: background 0.3s ease;
   opacity: 0.8;
   text-decoration: none;
   text-align: center;
+  padding-top: 5px;
 }
 
 .hero-btn:hover {
-  background-color: transparent;
+  background-color: #f4f4f4c1;
   border: 1px solid $text-pink;
-  color: $font-white;
+  color: $primary-pink;
 }

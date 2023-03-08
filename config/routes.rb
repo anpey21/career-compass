@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :answers, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :career_options, only: [:new, :create]
+  resources :priorities, only: [:new, :create]
 end

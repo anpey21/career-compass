@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# Career Options:
+# When you press wizard, you need to land on a page to enter two career options
+# Submit, then user creates two career options
+# Need to create an object of options
+
 # seed for 3 users with name, email, password = password
 tom = User.create(name: "tom", email: "tom@gmail.com", password: "password")
 anna = User.create(name: "anna", email: "anna@gmail.com", password: "password")

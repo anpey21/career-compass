@@ -2,15 +2,22 @@
   <!-- Sidebar -->
   <div class="w3-sidebar w3-bar-block w3-padding sidebar-bg w3-large pr-none" style="width:20%">
     <div class="w3-bar-item mb-3 mt-4 welcome">Tools</div>
-    <%= link_to "My Results", answers_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <% if @answers.count > 1 %>
+      <%= link_to "My Results", answers_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <% end %>
     <%= link_to "Career Challenge", new_career_option_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
-    <%= link_to "Find a coach", root_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <%= link_to "Find a coach", "https://mentor-me.herokuapp.com/", class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
     <%= link_to "Search our resources", root_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <svg class="arrows">
+      <path class="a1" d="M0 0 L30 32 L60 0"></path>
+      <path class="a2" d="M0 20 L30 52 L60 20"></path>
+      <path class="a3" d="M0 40 L30 72 L60 40"></path>
+    </svg>
   </div>
   <div class="container-dashboard mt-0 pe-4" style="margin-left:20%">
     <div class="d-flex justify-content-between dashboard-banner">
       <div>
-        <div class="welcome">Welcome <%= @user.name.capitalize %>!</div>
+        <div class="welcome">Welcome <span class="welcome pink"><%= @user.name.capitalize %>!</span></div>
       </div>
       <%= link_to "Take our career challenge!", new_career_option_path, class:"btn-ghost text-center mt-5 w-270 h-40" %>
     </div>

@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :career_options
   has_many :priorities
+  has_many :answers, through: :career_options
 end

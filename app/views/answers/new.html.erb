@@ -1,6 +1,4 @@
-<%= simple_form_for [@career_option, @answer] do |f| %>
-  <%= f.association :question %>
-<% end %>
+<h2>Please rate your <%= @career_options.first == @career_option ? "first" : "second" %> career option <%= @career_option.option %> </h2>
 
 <%= form_tag url_for(action: 'create'), method: "post" do %>
   <% Question.all.each do |question| %>
@@ -13,5 +11,5 @@
       <%= radio_button_tag question.question, "5" %>
     </div>
   <% end %>
-  <%= submit_tag "Create Post" %>
+  <%= submit_tag "Next" %>
 <% end %>

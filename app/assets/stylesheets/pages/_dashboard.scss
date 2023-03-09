@@ -135,12 +135,18 @@ a {
   .cards {
     grid-template-columns: 1fr;
   }
+  .card-category {
+    height: 200px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+  .card-category {
+    height: 180px;
   }
 }
 
@@ -149,6 +155,9 @@ a {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+  .card-category {
+    height: 160px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -156,12 +165,19 @@ a {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+
+  .card-category {
+    height: 130px;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .card-category {
+    height: 100px;
   }
 }
 

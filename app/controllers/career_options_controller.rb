@@ -12,7 +12,7 @@ class CareerOptionsController < ApplicationController
         @career_option = CareerOption.new
         redirect_to new_career_option_path
       elsif current_user.career_options.count == 2
-        redirect_to root_path
+        redirect_to new_priority_path
       end
     else
       render :new

@@ -1,4 +1,27 @@
 class AnswersController < ApplicationController
+  def new
+    @answer = Answer.new
+    @career_option = CareerOption.find(params[:career_option_id])
+    @career_options = CareerOption.where(user_id: current_user.id).last(2)
+  end
+
+  def create
+    @career_options = CareerOption.where(user_id: current_user.id).last(2)
+    # @first_career_option = @career_options[-2]
+    # @second_career_option = @career_options[-1]
+    @questions = Question.all
+    @questions.each do |question|
+      @answer = Answer.new(score: params[question.question], question: question, career_option_id: params[:career_option_id])
+      @answer.save
+    end
+
+    if params[:career_option_id].to_i == @career_options.first.id
+      redirect_to new_career_option_answer_path(@career_options.last)
+    else
+      redirect_to answers_path
+    end
+  end
+
   def index
     @career_options = CareerOption.where(user_id: current_user.id)
     @first_career_option = @career_options[-2]

@@ -1,17 +1,11 @@
-<h1>Please enter your <%= current_user.career_options.count == 0 ? "first" : "second" %> option</h1>
-
-<div class="row sign-up-container
-">
-  <div class="col-md-8 col-sm-12 flexi">
-    <div class="login-form center">
-      <div class="text-center pink bold">
-<%= simple_form_for @career_option do |f| %>
-  <%= f.input :option, label: false, input_html: {class: "form-option"} %>
-<% end %>
- </div>
-        -<div class="form-actions flexi">
-          <%= f.button :submit, "Sign up", class: "btn-ghost" %>
-        </div>
-      <% end %>
-    </div>
+<div class="career-options-container">
+  <div class="career-options-header">
+    <h1>Please enter your <%= current_user.career_options.count == 0 ? "first" : "second" %> option</h1>
   </div>
+  <div class="form-container">
+      <%= simple_form_for @career_option do |f| %>
+  <%= f.input :option, label: false, input_html: {class: "form-option"} %>
+<%= f.submit "Next", :class => "hero-btn align-center" %>
+<% end %>
+</div>
+</div>

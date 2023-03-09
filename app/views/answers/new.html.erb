@@ -1,0 +1,17 @@
+<%= simple_form_for [@career_option, @answer] do |f| %>
+  <%= f.association :question %>
+<% end %>
+
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+  <% Question.all.each do |question| %>
+    <div>
+      <%= label_tag question.question %>
+      <%= radio_button_tag question.question, "1" %>
+      <%= radio_button_tag question.question, "2" %>
+      <%= radio_button_tag question.question, "3" %>
+      <%= radio_button_tag question.question, "4" %>
+      <%= radio_button_tag question.question, "5" %>
+    </div>
+  <% end %>
+  <%= submit_tag "Create Post" %>
+<% end %>

@@ -1,4 +1,18 @@
 class AnswersController < ApplicationController
+  def new
+    @answer = Answer.new
+    @career_option = CareerOption.find(params[:career_option_id])
+  end
+
+  def create
+    raise
+    @career_options = CareerOption.where(user_id: current_user.id)
+    @first_career_option = @career_options[-2]
+    @second_career_option = @career_options[-1]
+    @questions = Question.all
+
+  end
+
   def index
     @career_options = CareerOption.where(user_id: current_user.id)
     @first_career_option = @career_options[-2]

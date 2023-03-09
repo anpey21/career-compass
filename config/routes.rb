@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :answers, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :career_options, only: [:new, :create]
+  resources :answers, only: [:index, :show, :edit, :update, :destroy]
+  resources :career_options, only: [:new, :create] do
+    resources :answers, only: [:new, :create]
+  end
   resources :priorities, only: [:new, :create]
 end

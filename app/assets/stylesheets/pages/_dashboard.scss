@@ -182,6 +182,15 @@ a {
   }
 }
 
+.hover-sidebar-list {
+  transition: 0.3s ease-in-out;
+}
+
+.hover-sidebar-list:hover {
+  color: $primary-pink !important;
+  background-color: $bg-grey !important;
+}
+
 //chat gpt
 // #dashboard {
 //   display: flex;

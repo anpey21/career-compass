@@ -32,13 +32,13 @@ pprogression = Priority.create(priority_name: "Progression", score: 6, user_id: 
 
 # seed for questions for user 1. Questions are salary,impact,work/life, balance,location,status,stability,progression.
 
-salary = Question.create(question: "How would you rate the salary of this job", priority_id: psalary.id)
-impact = Question.create(question: "How would you rate the impact of this job?", priority_id: pimpact.id)
-balance = Question.create(question: "How would you rate the work/life balance of this job?", priority_id: pbalance.id)
-location = Question.create(question: "How would you rate the location of this job?", priority_id: plocation.id)
-status = Question.create(question: "How would you rate the status of this job?", priority_id: pstatus.id)
-stability = Question.create(question: "How would you rate the stability of this job?", priority_id: pstability.id)
-progression = Question.create(question: "How would you rate the progression of this job?", priority_id: pprogression.id)
+salary = Question.create(question: "How happy are you with the salary that this job offers?", priority_id: psalary.id)
+impact = Question.create(question: "Does this company make an impact in your field of choice?", priority_id: pimpact.id)
+balance = Question.create(question: "Does this company offer a good work/life balance?", priority_id: pbalance.id)
+location = Question.create(question: "How would you rate the location of this career choice?", priority_id: plocation.id)
+status = Question.create(question: "Will this company offer you the prestige you're looking for?", priority_id: pstatus.id)
+stability = Question.create(question: "Do you see this option as having long term potential?", priority_id: pstability.id)
+progression = Question.create(question: "Does this company offer the career growth potential that you're looking for?", priority_id: pprogression.id)
 
 # seed for answers with question id,career_option id, and score between 1 and 5 for career option 1 and 2
 

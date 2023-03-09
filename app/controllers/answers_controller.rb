@@ -7,8 +7,6 @@ class AnswersController < ApplicationController
 
   def create
     @career_options = CareerOption.where(user_id: current_user.id).last(2)
-    # @first_career_option = @career_options[-2]
-    # @second_career_option = @career_options[-1]
     @questions = Question.all
     @questions.each do |question|
       @answer = Answer.new(score: params[question.question], question: question, career_option_id: params[:career_option_id])

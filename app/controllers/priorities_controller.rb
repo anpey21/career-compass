@@ -11,7 +11,8 @@ class PrioritiesController < ApplicationController
     if @priority.save
       order = current_user.priorities.count
       if order == 7
-        redirect_to root_path
+        career_option = current_user.career_options.last(2).first
+        redirect_to new_career_option_answer_path(career_option)
       else
         redirect_to new_priority_path
       end

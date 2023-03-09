@@ -8,6 +8,7 @@ class PrioritiesController < ApplicationController
   def create
     @priority = Priority.new(priority_params)
     @priority.user = current_user
+    # @priority.question_id = @order + 1
     if @priority.save
       order = current_user.priorities.count
       if order == 7

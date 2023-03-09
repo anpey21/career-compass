@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  
+
   def index
     @career_options = CareerOption.where(user_id: current_user.id)
     @first_career_option = @career_options[-2]

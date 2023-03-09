@@ -21,25 +21,28 @@
   margin-bottom: 10px;
 }
 
+.pink {
+  color: $primary-pink !important;
+}
+
 // article card
 .article-card {
   width: 32%;
   height: 80%;
+  background-color: #222;
   border-radius: $border-radius;
   margin-bottom: 10px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(226, 29, 96, 0.2);
   transition: all 0.3s ease; /* Add transition property to smoothly animate changes */
-  box-shadow: 0 0 5px rgba(226, 29, 96, 0.2); /* Add box-shadow property */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .article-card:hover {
-  transform: scale(1.03); /* Increase scale on hover */
-  border: $primary-pink;
-  box-shadow: 0 0 10px rgba(226, 29, 96, 0.2); /* Add box-shadow property */
+  transform: scale(1.03);
+  background-color: $primary-pink;
 }
 
 .card-header-analytics {
@@ -87,4 +90,12 @@ a :hover {
 
 .welcome {
   font-size: 2rem;
+}
+
+.chart-title {
+  font-size: large;
+}
+
+.h-95 {
+  height: 95%;
 }

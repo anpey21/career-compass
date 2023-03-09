@@ -59,7 +59,8 @@
   width: 270px !important;
 }
 
-.ml-10 {
+.h-40 {
+  height: 40px !important;
 }
 
 .cards {
@@ -79,11 +80,11 @@
 .card-category {
   background-color: #222;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: $border-radius;
+  box-shadow: 2px 2px 5px #000000;
   text-align: center;
   margin-top: 30px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .card-category:hover {
@@ -135,12 +136,18 @@ a {
   .cards {
     grid-template-columns: 1fr;
   }
+  .card-category {
+    height: 200px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+  .card-category {
+    height: 180px;
   }
 }
 
@@ -149,12 +156,19 @@ a {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+  .card-category {
+    height: 160px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card-category {
+    height: 130px;
   }
 }
 
@@ -163,6 +177,18 @@ a {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+  .card-category {
+    height: 100px;
+  }
+}
+
+.hover-sidebar-list {
+  transition: 0.3s ease-in-out;
+}
+
+.hover-sidebar-list:hover {
+  color: $primary-pink !important;
+  background-color: $bg-grey !important;
 }
 
 //chat gpt

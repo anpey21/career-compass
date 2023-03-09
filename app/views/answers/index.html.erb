@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="col text-center central-section-analytics">
-      <div class="welcome">Welcome <span class="pink-bold welcome"><%= current_user.name.capitalize %></span></div>
+      <div class="welcome">Welcome <span class="pink-bold welcome pink"><%= current_user.name.capitalize %></span></div>
       <div class="middle">
         Your top scored career option is
         <div class="top-option"><%= @top_career_option %></div>
@@ -33,44 +33,44 @@
     xAxes: [{
       scaleLabel: {
         display: true,
-        labelString: 'Score'
+        labelString: 'Priority'
       }
     }]
   }
 }) %>
     </div>
-    <div class="row">
+    <div class="row h-95">
       <div class="col">
         <div class="detail-bar-view">
-          <div class="chart-title text-center">Detailed Comparison</div>
+          <div class="chart-title text-center">Your scores comparison</div>
           <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score", legend: true) %>
         </div>
       </div>
       <div class="col">
         <div class="chart-title text-center">Recommended for you</div>
         <div class="articles-analytics-container">
-          <div class="article-card text-decoration-none" style="background-image: url('https://images.pexels.com/photos/312839/pexels-photo-312839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: fit">
+          <div class="article-card text-decoration-none">
             <%= link_to "https://hbr.org/2020/07/building-work-life-boundaries-in-the-wfh-era", class: "text-decoration-none height" do %>
-              <div class="card-content-analytics" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)">
+              <div class="card-content-analytics" >
                 <div class="card-header-analytics">Building Work-Life Boundaries in the WFH Era</div>
                 <div class="card-body-analytics">How to help yourself — and your employees — find time and space to be productive. by Nancy P. Rothbard
                 </div>
               </div>
             <% end %>
           </div>
-          <div class="article-card text-decoration-none" style="background-image: url('https://images.pexels.com/photos/312839/pexels-photo-312839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: fit">
+          <div class="article-card text-decoration-none" >
             <%= link_to "https://hbr.org/2021/12/is-your-burnout-from-too-much-work-or-too-little-impact", class: "text-decoration-none height" do %>
-              <div class="card-content-analytics" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)">
+              <div class="card-content-analytics">
                 <div class="card-header-analytics">Is Your Burnout From Too Much Work or Too Little Impact?</div>
                 <div class="card-body-analytics">When it comes to burnout, it’s natural to assume that by lessening our workload we can fight the culprit. On the contrary, research shows underutilisation might be the cause”
                 </div>
               </div>
             <% end %>
           </div>
-          <div class="article-card text-decoration-none" style="background-image: url('https://images.pexels.com/photos/312839/pexels-photo-312839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: fit">
+          <div class="article-card text-decoration-none">
             <%= link_to "https://hbr.org/2023/02/how-to-answer-what-are-your-salary-expectations
 ", class: "text-decoration-none height" do %>
-              <div class="card-content-analytics" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)">
+              <div class="card-content-analytics" >
                 <div class="card-header-analytics">How to Answer “What Are Your Salary Expectations?”
                 </div>
                 <div class="card-body-analytics">Many interview questions inspire dread in interviewees — one is especially complicated: “What are your salary expectations?”
@@ -83,4 +83,3 @@
     </div>
   </div>
 </div>
-

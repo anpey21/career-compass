@@ -21,7 +21,7 @@ class CareerOptionsController < ApplicationController
 
   private
 
-  def career_option_params
-    params.require(:career_option).permit(:name, :description, :user_id)
+  def career_options_params
+    params.require(:career_option).permit(:option)
   end
 end

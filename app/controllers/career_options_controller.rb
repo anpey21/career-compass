@@ -8,10 +8,10 @@ class CareerOptionsController < ApplicationController
     @career_option = CareerOption.new(career_options_params)
     @career_option.user = current_user
     if @career_option.save
-      if current_user.career_options.count == 1
+      if current_user.career_options.count.odd?
         @career_option = CareerOption.new
         redirect_to new_career_option_path
-      elsif current_user.career_options.count == 2
+      elsif current_user.career_options.count.even?
         redirect_to new_priority_path
       end
     else

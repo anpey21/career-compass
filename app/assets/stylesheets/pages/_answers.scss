@@ -1,0 +1,44 @@
+.answers-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answers-form input[type="radio"] {
+}
+
+.answers-form div {
+  display: flex;
+}
+
+.button-label-combo {
+  display: flex;
+  flex-direction: column;
+}
+
+.response-field-answer {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.answers-individual {
+  display: flex;
+  flex-direction: column;
+}
+
+.response-field-question-answers {
+  justify-content: center;
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // maybe set height to 60vh?
+}
+
+.answers-form {
+  width: 40%;
+}

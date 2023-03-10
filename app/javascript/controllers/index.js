@@ -6,3 +6,22 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+
+const infoContainer = document.querySelector("#scroll-box");
+
+const arrowScroll = () => {
+    infoContainer.scrollTo({
+      behavior: "smooth",
+    })
+    // scrolldelay = setTimeout(arrowScroll, 10);
+}
+
+document.getElementById("arrows").addEventListener("click", () => {
+  console.log("hello")
+  infoContainer.scrollIntoView({
+    behavior: "smooth",
+  })
+
+  //arrowScroll();
+})

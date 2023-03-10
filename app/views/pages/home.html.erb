@@ -13,13 +13,14 @@
     </div>
   </div>
 </div>
-<div class="how-it-works-container">
-  <svg class="arrows">
+<div class="how-it-works-container"  id="scroll-box">
+<%# <%= # Connect stimulus controller to make arrows clickable %>
+  <svg class="arrows" id= "arrows">
     <path class="a1" d="M0 0 L30 32 L60 0"></path>
     <path class="a2" d="M0 20 L30 52 L60 20"></path>
     <path class="a3" d="M0 40 L30 72 L60 40"></path>
   </svg>
-  <div class= "landing-pink-text">How our career decision system works</div>
+  <div class="landing-pink-text">How our career decision system works</div>
   <div class="circles-cards p-30">
     <div class="circle-card-body">
       <%= image_tag "option1.jpg", class: "circle-img" %>

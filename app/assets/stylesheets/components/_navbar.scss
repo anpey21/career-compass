@@ -36,8 +36,13 @@
 
 .nav-link {
   color: $primary-pink;
+  font-size: 16px;
 }
 
 .nav-link:hover {
   color: $text-pink;
+}
+
+.tagline {
+  font-family: $body-font-a;
 }

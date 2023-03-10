@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&family=Signika+Negative:wght@300;400;500&family=Tilt+Warp&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;1,200;1,300;1,400;1,500;1,600&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Catamaran:wght@100;200;300&family=Nixie+One&family=Quicksand:wght@300;400;500&family=Roboto:ital,wght@0,100;1,100&display=swap');
 // Define fonts for body and headers
 $body-font: "Nunito", "sans-serif";
 // $heading-font: "Raleway", "Montserrat", "sans-serif";
@@ -11,6 +11,14 @@ $medium-bold: "Nunito", 400;
 $bold-font: "Nunito", 700;
 $lighter-italic: "Nunito", 200, italic;
 $heading-font: "Raleway", 900;
+
+$careercompass-font: 'Aboreto', cursive;
+
+$body-font-a: 'Catamaran', sans-serif;
+$body-font-b: 'Nixie One', cursive;
+$body-font-c: 'Quicksand', sans-serif;
+$body-font-d: 'Roboto', sans-serif;
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -1,14 +1,14 @@
 <div class="hero-container">
   <div class="hero-header">CareerCompass</div>
   <div class="hero-content">
-    <div class="hero-content-text">
+    <div class="hero-content-text aigerim mb-5">
       Whether you’re in the early stages of your career or just looking for extra guidance, we’re here to help you discover where you’ll find happiness in the world of work.
     </div>
     <div class="hero-cta">
       <% if user_signed_in? %>
-        <%= link_to "Your Personal Dashboard", dashboard_path, class: "hero-btn" %>
+        <%= link_to "Your Personal Dashboard", dashboard_path, class: "btn-ghost text-center mt-3 w-75 h-40" %>
       <% else %>
-        <%= link_to "Get Started", new_user_registration_path, class: "hero-btn" %>
+        <%= link_to "Get Started", new_user_registration_path, class:"btn-ghost text-center mt-3 w-75 h-40" %>
       <% end %>
     </div>
   </div>

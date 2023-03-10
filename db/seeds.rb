@@ -12,11 +12,20 @@
 # Need to create an object of options
 
 # seed for 3 users with name, email, password = password
+puts "cleaning DB..."
+Answer.destroy_all
+CareerOption.destroy_all
+Question.destroy_all
+Priority.destroy_all
+User.destroy_all
+
+puts "creating seed..."
 tom = User.create(name: "tom", email: "tom@gmail.com", password: "password")
 anna = User.create(name: "anna", email: "anna@gmail.com", password: "password")
 aigerim = User.create(name: "aigerim", email: "aigerim@gmail.com", password: "password")
 
 # seed for 2 career options for user 1
+
 one = CareerOption.create(option: "Software Engineer", user_id: tom.id)
 two = CareerOption.create(option: "Data Scientist", user_id: tom.id)
 

@@ -1,6 +1,7 @@
 <div class="options-container">
   <div class="option-header">
-    <h2>Please enter your <%= current_user.career_options.count == 0 ? "first" : "second" %> option</h2>
+            <h2>Please enter your <%= current_user.career_options.count.even? ? "first" : "second" %> option</h2>
+
       </div>
     <div class="option-form">
       <%= simple_form_for @career_option do |f| %>

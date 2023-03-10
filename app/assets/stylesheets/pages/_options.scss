@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 60vh;
+  // maybe set height to 60vh?
 }
 
 .option-header {
@@ -17,11 +18,12 @@
 .option-input {
   background: none;
   border: 1px solid $text-pink;
+  background-color: #fa469205 !important;
+  color: white !important;
 }
 
 .option-form {
   width: 60%;
   max-width: 500px;
   text-align: center;
-
 }

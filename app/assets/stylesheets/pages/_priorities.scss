@@ -1,3 +1,39 @@
-.priority-matrix {
-  border: 1px solid $text-pink;
+.priority_score {
+  display: flex;
+}
+
+.form-check {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.form-check .form-check-input {
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+
+.new_priority {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
+}
+/* Square radio buttons */
+.form-check-input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  border: 1px solid $primary-pink;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+}
+
+/* Purple radio buttons when checked */
+.form-check-input[type="radio"]:checked {
+  background-color: $primary-pink;
+  border-color: $primary-pink;
 }

@@ -29,15 +29,20 @@ class AnswersController < ApplicationController
     @second_answer = Answer.where(career_options: @second_career_option.id)
     @questions = Question.all
     @priorities = Priority.where(user_id: current_user.id)
-    @priority_names = @priorities.pluck(:priority_name)
-    @priority_score = @priorities.pluck(:priority_name, :score)
+    # id and score
+    # name and score
+    @recent_priorities = @priorities.last(7)
+    @priority_id_score = @recent_priorities.map { |p| [p.id, p.score] }
+    @priority_name_score = @recent_priorities.map { |p| [p.priority_name, p.score] }
+    @priority_score = @recent_priorities.map { |p| p.score }
+    @priority_names = @recent_priorities.map { |p| p.priority_name }
     # first answer scores
     @first_answer_scores = @first_answer.pluck(:score)
     # combine priority names and first answer scores into a array of arrays
     @first_answer_scores_with_priority_names = @priority_names.zip(@first_answer_scores)
     # weight first answer scores by priority score
     @first_answer_weighted_score_array = @first_answer_scores_with_priority_names.map.with_index do |(text, num), index|
-      [text, num.to_i * @priority_score[index][1]]
+      [text, num.to_i * @priority_name_score[index][1]]
     end
 
     # second answer scores
@@ -46,20 +51,15 @@ class AnswersController < ApplicationController
     @second_answer_scores_with_priority_names = @priority_names.zip(@second_answer_scores)
     # weight second answer scores by priority score
     @second_answer_weighted_score_array = @second_answer_scores_with_priority_names.map.with_index do |(text, num), index|
-      [text, num.to_i * @priority_score[index][1]]
+      [text, num.to_i * @priority_name_score[index][1]]
     end
-    # return array of arrays with priority_id and priority score
-    @priorities_plucked = @priorities.pluck(:id, :score)
 
-    # return array of arrays with priority name and answer score
-    @priorities_plucked_with_names = @priorities.pluck(:priority_name, :score)
-    # return array of priority names ordered by score from highest to lowest with scores
-    @priorities_plucked_with_names_ordered_by_score = @priorities_plucked_with_names.sort_by do |_priority_name, score|
+    @priorities_plucked_with_names_ordered_by_score = @priority_name_score.sort_by do |_priority_name, score|
       score
     end.reverse
 
     # priority names ordered by score from highest to lowest
-    @priorities_names_ordered_by_score = @priorities_plucked_with_names.sort_by do |_priority_name, score|
+    @priorities_names_ordered_by_score = @priority_name_score.sort_by do |_priority_name, score|
                                            score
                                          end.reverse.map { |priority_name, _score| priority_name }
 
@@ -100,18 +100,9 @@ class AnswersController < ApplicationController
     @second_percentage = ((@second_total_score.to_f / @total_possible_score) * 100).round(1)
   end
 
-  # convert question_id to priority_id
-  def convert_question_to_priority(answer)
-    answer.map do |question_id, score|
-      score = score.to_i
-      priority_id = Question.find(question_id).priority_id
-      [priority_id, score]
-    end
-  end
-
   # returning the total possible score
   def total_possible_score
-    total_priority = @priorities.sum(:score)
+    total_priority = @recent_priorities.inject(0) { |total, priority| total + priority.score }
     answer_quantity = Answer.where(career_options: @first_career_option.id).count
     total_priority * answer_quantity
   end

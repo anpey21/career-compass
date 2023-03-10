@@ -27,6 +27,18 @@ class PrioritiesController < ApplicationController
     end
   end
 
+  # def edit
+  #   @priority = Priority.find(params[:id])
+  #   @priorities = ["Salary", "Impact", "Work/life balance", "Location", "Status", "Stability", "Progression"]
+  #   @order = (current_user.priorities.count % 7)
+  # end
+
+  # def update
+  #   @priority = Priority.find(params[:id])
+  #   @priority.update(priority_params)
+  #   redirect_to new_priority_pat
+  # end
+
   def priority_params
     params.require(:priority).permit(:priority_name, :score)
   end

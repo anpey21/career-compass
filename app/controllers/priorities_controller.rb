@@ -9,7 +9,6 @@ class PrioritiesController < ApplicationController
   def create
     @priority = Priority.new(priority_params)
     @priority.user = current_user
-    # @priority.question_id = @order + 1
     if @priority.save
       if current_user.priorities.count == 0
         order = 1
@@ -23,6 +22,8 @@ class PrioritiesController < ApplicationController
         redirect_to new_priority_path
       end
     else
+      @priorities = ["Salary", "Impact", "Work/life balance", "Location", "Status", "Stability", "Progression"]
+      @order = (current_user.priorities.count % 7)
       render :new
     end
   end

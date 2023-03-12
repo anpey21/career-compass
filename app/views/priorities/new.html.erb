@@ -1,12 +1,12 @@
 <div class="options-container">
   <div class="option-header">
-    <h1>How important is company <%= @priorities[@order].try(:downcase) %> to you?</h1>
+    <h1>How import is company <%=  @priorities[@order].try(:downcase) %> to you?</h1>
   </div>
   <div class="priority-form">
-    <%= simple_form_for @priority do |f| %>
+    <%= simple_form_for @priority, html: { id: "priority-form"} do |f| %>
       <%= f.input :score, as: :radio_buttons, collection: [1,2,3,4,5,6,7,8,9,10], label: false %>
       <%= f.input :priority_name, label: false, input_html: { value: @priorities[@order], class: "d-none" } %>
-      <%= f.submit "Next", :class => "hero-btn align-self-center" %>
+      <%= f.submit "Next", :class => "priorities-btn" %>
     <% end %>
   </div>
 </div>

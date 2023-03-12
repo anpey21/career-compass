@@ -3,25 +3,30 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
-
+import { Application } from "@hotwired/stimulus"
+import ScrollTo from 'stimulus-scroll-to'
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+const application = Application.start()
+application.register("scroll-to", ScrollTo)
 
-const infoContainer = document.querySelector("#scroll-box");
 
-const arrowScroll = () => {
-    infoContainer.scrollTo({
-      behavior: "smooth",
-    })
-    // scrolldelay = setTimeout(arrowScroll, 10);
-}
 
-document.getElementById("arrows").addEventListener("click", () => {
-  console.log("hello")
-  infoContainer.scrollIntoView({
-    behavior: "smooth",
-  })
+// const infoContainer = document.querySelector("#scroll-box");
 
-  //arrowScroll();
-})
+// const arrowScroll = () => {
+//     infoContainer.scrollTo({
+//       behavior: "smooth",
+//     })
+//     // scrolldelay = setTimeout(arrowScroll, 10);
+// }
+
+// document.getElementById("arrows").addEventListener("click", () => {
+//   console.log("hello")
+//   infoContainer.scrollIntoView({
+//     behavior: "smooth",
+//   })
+
+//   //arrowScroll();
+// })

@@ -2,15 +2,23 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
+<<<<<<< HEAD
 import { application } from "./application"
 import { Application } from "@hotwired/stimulus"
 import ScrollTo from 'stimulus-scroll-to'
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+=======
+// import { application } from "./application"
+
+// import HelloController from "./hello_controller"
+// application.register("hello", HelloController)
+>>>>>>> 429d3f535bd26bb26e097e0b4df14788b7c9e5d1
 
 const application = Application.start()
 application.register("scroll-to", ScrollTo)
 
+<<<<<<< HEAD
 
 
 // const infoContainer = document.querySelector("#scroll-box");
@@ -28,5 +36,22 @@ application.register("scroll-to", ScrollTo)
 //     behavior: "smooth",
 //   })
 
+=======
+// const infoContainer = document.querySelector("#scroll-box");
+
+// const arrowScroll = () => {
+//     infoContainer.scrollTo({
+//       behavior: "smooth",
+//     })
+//     // scrolldelay = setTimeout(arrowScroll, 10);
+// }
+
+// document.getElementById("arrows").addEventListener("click", () => {
+//   console.log("hello")
+//   infoContainer.scrollIntoView({
+//     behavior: "smooth",
+//   })
+
+>>>>>>> 429d3f535bd26bb26e097e0b4df14788b7c9e5d1
 //   //arrowScroll();
 // })

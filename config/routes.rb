@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :career_options, only: [:new, :create] do
     resources :answers, only: [:new, :create]
   end
-  resources :priorities, only: [:new, :create]
+  resources :priorities, only: [:new, :create, :edit, :update]
 end

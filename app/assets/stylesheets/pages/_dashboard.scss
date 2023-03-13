@@ -1,6 +1,3 @@
-* {
-  overflow-y: hidden;
-}
 #dashboard {
   display: flex;
 
@@ -16,6 +13,7 @@
 .dashboard-page-container {
   display: flex;
   width: 100%;
+  height: 100vh;
 }
 .content-container {
   padding-top: 8px;
@@ -29,9 +27,6 @@
   font-size: 14px;
   font-style: italic;
   color: $even-lighter-bg-grey;
-}
-
-.card-article-description:hover {
 }
 
 .welcome {

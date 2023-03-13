@@ -1,0 +1,13 @@
+.container-analytics-dash {
+  width: 100%;
+  height: calc(100vh - 53px);
+  margin: 0 auto;
+  color: $off-white;
+  overflow: hidden;
+}
+
+.articles-analytics-container {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}

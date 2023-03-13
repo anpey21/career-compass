@@ -200,14 +200,12 @@
               </div>
             </div>
           </div>
-          <div class="status-theme">
+          <div class="modal-footer">
+            <button type="button" class="btn-ghost no-bg" data-bs-dismiss="modal">Close</button>
+            <%= f.button :submit, class: "btn-ghost no-bg" %>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-ghost no-bg" data-bs-dismiss="modal">Close</button>
-          <%= f.button :submit, class: "btn-ghost no-bg" %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

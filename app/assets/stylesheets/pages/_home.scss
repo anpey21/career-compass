@@ -5,7 +5,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 85vh;
+  height: 90vh;
   color: $font-white;
   padding: 0;
   padding-top: 8vh;
@@ -266,12 +266,25 @@ img {
     grid-template-columns: 1fr;
   }
   .hero-header {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   .hero-container {
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 50px;
+    text-align: center;
+  }
+  .arrows {
+    display: none;
+  }
+  .hero-cta {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+    padding: 0;
   }
 }
 
@@ -318,6 +331,6 @@ img {
 @media (min-width: 1200px) {
   .circles-cards {
     grid-template-columns: 1fr 1fr 1fr;
-    
+
   }
 }

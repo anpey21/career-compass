@@ -17,7 +17,9 @@ Answer.destroy_all
 CareerOption.destroy_all
 Question.destroy_all
 Priority.destroy_all
+Goal.destroy_all
 User.destroy_all
+
 
 puts "creating seed..."
 tom = User.create(name: "tom", email: "tom@gmail.com", password: "password")
@@ -37,12 +39,12 @@ pbalance = Priority.create(priority_name: "Work/life balance", score: 8, user_id
 plocation = Priority.create(priority_name: "Location", score: 5, user_id: tom.id)
 pstatus = Priority.create(priority_name: "Status", score: 2, user_id: tom.id)
 pstability = Priority.create(priority_name: "Stability", score: 7, user_id: tom.id)
-pprogression = Priority.create(priority_name: "Progression", score: 6, user_id: tom.id)
+pprogression = Priority.create(priority_name: "Career Growth Potential", score: 6, user_id: tom.id)
 
 # seed for questions for user 1. Questions are salary,impact,work/life, balance,location,status,stability,progression.
 
 salary = Question.create(question: "Salary", priority_id: psalary.id)
-impact = Question.create(question: "Impact", priority_id: pimpact.id)
+impact = Question.create(question: "Social Impact", priority_id: pimpact.id)
 balance = Question.create(question: "Work/Life Balance", priority_id: pbalance.id)
 location = Question.create(question: "Location", priority_id: plocation.id)
 status = Question.create(question: "Status", priority_id: pstatus.id)

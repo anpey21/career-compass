@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :answers, only: [:new, :create]
   end
   resources :priorities, only: [:new, :create, :edit, :update]
+  resources :goals
 end

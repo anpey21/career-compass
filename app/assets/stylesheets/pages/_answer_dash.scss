@@ -27,7 +27,7 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  height: calc(97vh - 60px);
+  height: calc(93vh - 60px);
   padding-top: 2vh;
   padding-left: 2vw;
   padding-right: 2vw;
@@ -37,11 +37,11 @@
 
 .div1 {
   grid-area: 1 / 1 / 2 / 3;
-  height: calc((97vh - 60px) / 2);
+  height: calc((93vh - 60px) / 2);
 }
 .div2 {
   grid-area: 1 / 3 / 2 / 5;
-  height: calc((97vh - 60px) / 2);
+  height: calc((93vh - 60px) / 2);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -50,18 +50,26 @@
 }
 .div3 {
   grid-area: 1 / 5 / 2 / 7;
-  height: calc((97vh - 60px) / 2);
+  height: calc((93vh - 60px) / 2);
 }
 .div4 {
   grid-area: 2 / 1 / 3 / 4;
-  height: calc((97vh - 60px) / 2);
+  height: calc((93vh - 60px) / 2);
 }
 .div5 {
   grid-area: 2 / 4 / 3 / 7;
-  height: calc((97vh - 60px) / 2);
+  height: calc((93vh - 60px) / 2);
 }
 
-@media (max-width: 2200px) {
+@media (max-width: 2200px) and (min-width: 1600px) {
+  .bottom {
+    display: flex;
+    justify-content: space-evenly;
+    .btn-xl {
+      font-size: 1.5vw;
+      width: 45%;
+    }
+  }
 }
 
 @media (max-width: 900px) {
@@ -75,23 +83,23 @@
 
   .div1 {
     grid-area: 1 / 1 / 2 / 2;
-    width: 50vw;
+    width: 48vw;
   }
   .div2 {
     grid-area: 1 / 2 / 2 / 3;
-    width: 50vw;
+    width: 48vw;
   }
   .div3 {
     grid-area: 2 / 1 / 3 / 3;
-    width: 100vw;
+    width: 96vw;
   }
   .div4 {
     grid-area: 3 / 1 / 4 / 2;
-    width: 50vw;
+    width: 48vw;
   }
   .div5 {
     grid-area: 3 / 2 / 4 / 3;
-    width: 50vw;
+    width: 48vw;
   }
 }
 
@@ -106,22 +114,70 @@
 
   .div1 {
     grid-area: 1 / 1 / 2 / 2;
-    width: 100vw;
+    width: 96vw;
   }
   .div2 {
     grid-area: 2 / 1 / 3 / 2;
-    width: 100vw;
+    width: 96vw;
   }
   .div3 {
     grid-area: 3 / 1 / 4 / 2;
-    width: 100vw;
+    width: 96vw;
   }
   .div4 {
     grid-area: 4 / 1 / 5 / 2;
-    width: 100vw;
+    width: 96vw;
   }
   .div5 {
     grid-area: 5 / 1 / 6 / 2;
-    width: 100vw;
+    width: 96vw;
+  }
+}
+
+@media (max-width: 1069px) {
+  .top-option {
+    font-size: 4vw;
+  }
+  .div2 {
+    font-size: 2vw;
+    .welcome {
+      font-size: 2.5vw;
+    }
+  }
+  .parent {
+    .chart-title {
+      font-size: 3vw;
+    }
+
+    .card-header-analytics {
+      font-size: 2vw;
+    }
+    .card-body-analytics {
+      font-size: 1.5vw;
+    }
+  }
+}
+
+@media (max-width: 738px) {
+  .top-option {
+    font-size: 6vw;
+  }
+  .div2 {
+    font-size: 4vw;
+    .welcome {
+      font-size: 4vw;
+    }
+  }
+  .parent {
+    .chart-title {
+      font-size: 5vw;
+    }
+
+    .card-header-analytics {
+      font-size: 2.5vw;
+    }
+    .card-body-analytics {
+      font-size: 2vw;
+    }
   }
 }

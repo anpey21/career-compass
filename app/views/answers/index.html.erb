@@ -12,13 +12,13 @@
       Your responses show that you are a <span class="percentage"><%= @first_percentage %>%</span> fit for <%= @first_career_option.option %> and a <span class="percentage"><%= @second_percentage %>%</span> fit for <%= @second_career_option.option %>.
     </div>
     <div class="bottom">
-      <%= link_to "Your Dashboard", dashboard_path, class:"btn-ghost mb-2" %>
-      <%= link_to "Career Goals", goals_path, class:"btn-ghost" %>
+      <%= link_to "Your Dashboard", dashboard_path, class:"btn-ghost mb-2 btn-xl" %>
+      <%= link_to "Career Goals", goals_path, class:"btn-ghost mb-2 btn-xl" %>
     </div>
   </div>
   <div class="div3">
     <div class="chart-title text-center" style="height: 10%;">Your Priorities</div>
-    <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#e21d60"], min: 0, max: 10, xtitle: "Score", height: "90%", width: "100%", options: {scales: {yAxes: [{display: false}],xAxes: [{scaleLabel: {display: true,labelString: 'Priority'}}]}}) %>
+    <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#e21d60"], min: 0, max: 10, xtitle: "Score", height: "90%", width: "90%", options: {color: "#fff", scales: {yAxes: [{display: false}],xAxes: [{scaleLabel: {display: true,labelString: 'Priority'}}]}}) %>
   </div>
   <div class="div4">
     <div class="chart-title text-center"  style="height: 10%;">Your scores comparison</div>

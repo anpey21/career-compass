@@ -24,17 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_015447) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.bigint "priority_id", null: false
-    t.string "title"
-    t.string "url"
-    t.string "image_url"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["priority_id"], name: "index_articles_on_priority_id"
-  end
-
   create_table "career_options", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "option"
@@ -90,7 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_015447) do
 
   add_foreign_key "answers", "career_options"
   add_foreign_key "answers", "questions"
-  add_foreign_key "articles", "priorities"
   add_foreign_key "career_options", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "priorities", "users"

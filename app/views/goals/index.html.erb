@@ -152,7 +152,7 @@
                 </div>
                 <div class="modal-body">
                   <%= simple_form_for goal, method: :put do |f| %>
-                    <%= f.select :goal_status, options_for_select([["In Progress"], ["Completed"], ["Archived"]], selected: goal.goal_status), {}, class: "form-background modal-field-width" %>
+                    <%= f.select :goal_status, options_for_select([["In Progress"], ["Completed"], ["Archived"]], selected: goal.goal_status), {}, class: "form-background modal-field-width dropdown" %>
                     <%= f.submit "Update Goal", class: "btn-ghost no-bg" %>
                   <% end %>
                 </div>

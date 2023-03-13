@@ -164,27 +164,27 @@
       </div>
     </div>
   </div>
-  <!-- New Goal Modal -->
-  <div class="modal fade" id="newGoal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content modal-color">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">New Goal</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for @goal do |f| %>
-            <%= f.input :goal_name, input_html: {class: "form-background" }%>
-            <div class="row">
-              <div class="col-4">
-                <%= f.input :start_value, input_html: {class: "form-background modal-field-width" }, label: "Start Value" %>
-              </div>
-              <div class="col-4">
-                <%= f.input :target_value, input_html: {class: "form-background modal-field-width" }, label: "Target Value"%>
-              </div>
-              <div class="col-4">
-                <%= f.input :current_value, input_html: {class: "form-background modal-field-width" }, label: "Current Value" %>
-              </div>
+</div>
+<!-- New Goal Modal -->
+<div class="modal fade" id="newGoal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-color">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New Goal</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @goal do |f| %>
+          <%= f.input :goal_name, input_html: {class: "form-background" }%>
+          <div class="row">
+            <div class="col-4">
+              <%= f.input :start_value, input_html: {class: "form-background modal-field-width" }, label: "Start Value" %>
+            </div>
+            <div class="col-4">
+              <%= f.input :target_value, input_html: {class: "form-background modal-field-width" }, label: "Target Value"%>
+            </div>
+            <div class="col-4">
+              <%= f.input :current_value, input_html: {class: "form-background modal-field-width" }, label: "Current Value" %>
             </div>
           </div>
           <div class="data-unit">
@@ -212,4 +212,3 @@
   </div>
 </div>
 <!-- End of New Goal Modal -->
-</div>

@@ -1,0 +1,215 @@
+<div class="container">
+  <div class="goal-header">
+    <div class="goal-header welcome"><strong><%= @user.name.capitalize %>'s goals</strong></div>
+    <div class="flex">
+      <button type="button" class="btn-ghost no-bg text-center mt-5 w-270 h-40" data-bs-toggle="modal" data-bs-target="#newGoal">
+        New Goal      </button>
+    </div>
+  </div>
+  <div class="cards">
+    <% @active_goals.each do |goal| %>
+      <div class="card-category goal-card">
+        <div class="goal-detail">
+          <div class="goal-text">
+            <div class="goal-title text-left"><strong> <%= goal.goal_name.capitalize %></strong>
+            </div>
+            <div class="goal-details text-left"> <i>
+                Target Completion : <%= goal.goal_completion_date.strftime("%B %d, %Y") %><br>
+              </i>
+            </div>
+          </div>
+          <div class="goal-actions">
+            <i class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal-<%= goal.id %>"></i>
+            <i class="fa-solid fa-circle-check" data-bs-toggle="modal" data-bs-target="#completeModal-<%= goal.id %>"></i>
+            <i class="fa-solid fa-trash" data-bs-toggle="modal" data-bs-target="#deleteModal-<%= goal.id %>"></i>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-bar-fill" style="width: <%= (goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100 %>%;"></div>
+        </div>
+      </div>
+      <!-- Edit Goal Modal -->
+      <div class="modal fade" id="editModal-<%= goal.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content modal-color">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Goal</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for goal, method: :put do |f| %>
+                <%= f.input :goal_name, input_html: {class: "form-background" }, label: "Goal Name", value: goal.goal_name %>
+                <div class="modal-values">
+                  <div class="row">
+                    <div class="col-4">
+                      <%= f.input :start_value, input_html: {class: "form-background modal-field-width" }, label: "Start Value", value: goal.start_value %>
+                    </div>
+                    <div class="col-4">
+                      <%= f.input :target_value, input_html: {class: "form-background modal-field-width" }, label: "Target Value", value: goal.target_value %>
+                    </div>
+                    <div class="col-4">
+                      <%= f.input :current_value, input_html: {class: "form-background modal-field-width" }, label: "Current Value", value: goal.current_value %>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-unit">
+                  <div class="row">
+                    <div class="col-4">
+                      <%= f.input :unit, input_html: {class: "form-background modal-field-width" }, label: "Unit", value: goal.unit %>
+                    </div>
+                    <div class="col-4">
+                      <%= f.input :theme, input_html: {class: "form-background modal-field-width" }, label: "Theme", value: goal.theme %>
+                    </div>
+                    <div class="col-4">
+                      <%= f.input :goal_completion_date, label: "Completion Date", as: :date, html5: true, input_html: {class: "form-background"}, label: "Target Completion", value: goal.goal_completion_date %>
+                    </div>
+                  </div>
+                </div>
+                <div class="status-theme">
+                </div>
+                <%= f.submit "Update Goal", class: "btn-ghost no-bg" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Edit Goal Modal -->
+      <!-- Complete Modal -->
+      <div class="modal fade" id="completeModal-<%= goal.id %>" tabindex="-1" aria-labelledby="completeModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content modal-color">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="completeModal">Goal Status</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for goal, method: :put do |f| %>
+                <%= f.select :goal_status, options_for_select([["In Progress"], ["Completed"], ["Archived"]], selected: goal.goal_status), {}, class: "form-background modal-field-width dropdown" %>
+                <%= f.submit "Update Goal", class: "btn-ghost no-bg" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Complete Goal Modal -->
+      <!-- Delete Goal Modal -->
+      <div class="modal fade" id="deleteModal-<%= goal.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content modal-color">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Goal</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete your goal : <br>
+                <%= goal.goal_name %>?</p>
+            </div>
+            <div class="modal-footer">
+              <%= button_to "Delete Goal", goal_path(goal), method: :delete, class: "btn-ghost no-bg" %>
+              <button type="button" class="btn-ghost no-bg" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of delete modal -->
+    <% end %>
+  </div>
+  <!-- completed goal section -->
+  <div class="completed-goals-section mt-5">
+    <div class="completed-goals-header">
+      <button class="btn-ghost no-bg text-center mt-5 w-full h-40" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapse">
+        Completed Goals <i class="fa-solid fa-angle-down"></i></button>
+    </div>
+    <div class="collapse" id="collapse">
+      <div class="cards">
+        <% @completed_goals.each do |goal| %>
+          <div class="card-category goal-card">
+            <div class="goal-detail">
+              <div class="goal-text">
+                <div class="goal-title text-left"><strong> <%= goal.goal_name.capitalize %></strong>
+                </div>
+                <div class="goal-details text-left"> <i>
+                    Target Completion : <%= goal.goal_completion_date.strftime("%B %d, %Y") %><br>
+                    Goal Status : <%= goal.goal_status.capitalize %> </i>
+                </div>
+              </div>
+              <div class="goal-actions">
+                <i class="fa-solid fa-trash" data-bs-toggle="modal" data-bs-target="#deleteModal-<%= goal.id %>"></i>
+                <i class="fa-solid fa-circle-check" data-bs-toggle="modal" data-bs-target="#completeModal-<%= goal.id %>"></i>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: <%= 100 %>%;"></div>
+            </div>
+          </div>
+          <!-- Complete Modal -->
+          <div class="modal fade" id="completeModal-<%= goal.id %>" tabindex="-1" aria-labelledby="completeModal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content modal-color">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="completeModal">New Goal</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for goal, method: :put do |f| %>
+                    <%= f.select :goal_status, options_for_select([["In Progress"], ["Completed"], ["Archived"]], selected: goal.goal_status), {}, class: "form-background modal-field-width" %>
+                    <%= f.submit "Update Goal", class: "btn-ghost no-bg" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End of Complete Goal Modal -->
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- New Goal Modal -->
+  <div class="modal fade" id="newGoal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-color">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">New Goal</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for @goal do |f| %>
+            <%= f.input :goal_name, input_html: {class: "form-background" }%>
+            <div class="row">
+              <div class="col-4">
+                <%= f.input :start_value, input_html: {class: "form-background modal-field-width" }, label: "Start Value" %>
+              </div>
+              <div class="col-4">
+                <%= f.input :target_value, input_html: {class: "form-background modal-field-width" }, label: "Target Value"%>
+              </div>
+              <div class="col-4">
+                <%= f.input :current_value, input_html: {class: "form-background modal-field-width" }, label: "Current Value" %>
+              </div>
+            </div>
+          </div>
+          <div class="data-unit">
+            <div class="row">
+              <div class="col-4">
+                <%= f.input :unit, input_html: {class: "form-background modal-field-width" }, label: "Unit" %>
+              </div>
+              <div class="col-4">
+                <%= f.input :theme, input_html: {class: "form-background modal-field-width" }, label: "Theme" %>
+              </div>
+              <div class="col-4">
+                <%= f.input :goal_completion_date, label: "Completion Date", as: :date, html5: true, input_html: {class: "form-background modal-field-width"}, label: "Target Completion" %>
+              </div>
+            </div>
+          </div>
+          <div class="status-theme">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-ghost no-bg" data-bs-dismiss="modal">Close</button>
+          <%= f.button :submit, class: "btn-ghost no-bg" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- End of New Goal Modal -->
+</div>

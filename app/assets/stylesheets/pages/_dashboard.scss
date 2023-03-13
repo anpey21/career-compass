@@ -13,6 +13,7 @@
 .dashboard-page-container {
   display: flex;
   width: 100%;
+  height: 100vh;
 }
 .content-container {
   padding-top: 8px;
@@ -26,9 +27,6 @@
   font-size: 14px;
   font-style: italic;
   color: $even-lighter-bg-grey;
-}
-
-.card-article-description:hover {
 }
 
 .welcome {
@@ -124,6 +122,13 @@
 a {
   text-decoration: none;
 }
+
+.dashboard-arrows {
+  display: flex;
+  text-align: center;
+  margin-top: 100px;
+}
+
 @media (max-width: 767px) {
   .w3-sidebar {
     width: 100%;

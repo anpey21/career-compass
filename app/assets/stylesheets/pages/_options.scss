@@ -13,13 +13,19 @@
   font-size: 2rem;
   font-weight: 600;
   color: $font-white;
+  text-align: center;
+  line-height: 12px;
 }
 
 .option-input {
   background: none;
-  border: 1px solid $text-pink;
+  border: 1px solid $primary-pink;
   background-color: #fa469205 !important;
   color: white !important;
+}
+
+.option-input:focus {
+  border: none;
 }
 
 .option-form {

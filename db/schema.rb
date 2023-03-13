@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_060947) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_015447) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_060947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_career_options_on_user_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "goal_name"
+    t.integer "start_value"
+    t.integer "target_value"
+    t.integer "current_value"
+    t.string "unit"
+    t.string "goal_status"
+    t.string "theme"
+    t.date "goal_completion_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "priorities", force: :cascade do |t|
@@ -65,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_060947) do
   add_foreign_key "answers", "career_options"
   add_foreign_key "answers", "questions"
   add_foreign_key "career_options", "users"
+  add_foreign_key "goals", "users"
   add_foreign_key "priorities", "users"
   add_foreign_key "questions", "priorities"
 end

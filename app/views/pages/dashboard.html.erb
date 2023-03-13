@@ -6,13 +6,18 @@
       <%= link_to "My Results", answers_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
     <% end %>
     <%= link_to "Career Challenge", new_career_option_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <%= link_to "Your Goals", goals_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
     <%= link_to "Find a coach", "https://mentor-me.herokuapp.com/", class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
     <%= link_to "Search our resources", root_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
-    <%# <svg class="arrows">
+     <svg class="arrows dashboard-arrows">
+    <a
+      href="#scroll-box"s
+    >
       <path class="a1" d="M0 0 L30 32 L60 0"></path>
       <path class="a2" d="M0 20 L30 52 L60 20"></path>
       <path class="a3" d="M0 40 L30 72 L60 40"></path>
-    </svg> %>
+  </a>
+  </svg>
   </div>
   <div class="container-dashboard mt-0 pe-4" style="margin-left:20%">
     <div class="d-flex justify-content-between dashboard-banner">
@@ -50,7 +55,7 @@
       <%= link_to "https://hbr.org/2022/09/setting-career-goals-when-you-feel-overwhelmed", class: "text-decoration-none " do %>
         <div class="card-category" >
           <div class="card-article-header">Setting Career goals when you feel overwhelmed</div>
-          <div class="card-article-description">You can grow out of your slump.</div>
+          <div class="card-article-description" id= "scroll-box">You can grow out of your slump.</div>
         </div>
       <% end %>
     </div>

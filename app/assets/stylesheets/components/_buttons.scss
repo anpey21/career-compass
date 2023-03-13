@@ -1,17 +1,3 @@
-.btn-flat {
-  background: $text-pink;
-  color: $font-white;
-  border: none;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-}
-
-.btn-flat:hover,
-.btn-flat:focus {
-  background-blend-mode: darken;
-}
-
 .btn-ghost {
   background-color: none;
   color: $font-white;
@@ -19,17 +5,12 @@
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
+  min-width: 120px;
   //transition time
   transition: all 0.3s ease;
 }
 
-
-.btn-flat + .btn-ghost {
-  margin-left: 0.25rem;
-}
-
-.btn-ghost:hover,
-.btn-ghost:focus {
+.btn-ghost:hover {
   color: $primary-pink;
 }
 
@@ -61,5 +42,21 @@
 }
 
 .dashboard-btn:hover {
-  color: $primary-pink;
+  color: $text-pink;
+}
+
+.priorities-btn {
+  border-radius: $border-radius;
+  color: $font-white;
+  border: 1px solid $primary-pink;
+  background-color: transparent;
+  width: 20%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-self: center;
+  font-size: 18px;
+}
+
+.priorities-btn:hover {
+  color: $text-pink;
 }

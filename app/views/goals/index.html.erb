@@ -8,7 +8,7 @@
   </div>
   <div class="cards">
     <% @active_goals.each do |goal| %>
-      <div class="card-category goal-card">
+      <div class="card-goal goal-card">
         <div class="goal-detail">
           <div class="goal-text">
             <div class="goal-title text-left"><strong> <%= goal.goal_name.capitalize %></strong>
@@ -25,7 +25,13 @@
           </div>
         </div>
         <div class="progress-bar">
-          <div class="progress-bar-fill" style="width: <%= (goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100 %>%;"></div>
+          <% if ((goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100) > 0  %>
+            You're <%= ((goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100).round(0) %>% of the way there!
+          <% else %>
+            Enter your current status to see your progress!
+          <% end %>
+          <div class="progress-bar-fill" style="width: <%= (goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100 %>%;">
+          </div>
         </div>
       </div>
       <!-- Edit Goal Modal -->
@@ -61,7 +67,7 @@
                       <%= f.input :theme, input_html: {class: "form-background modal-field-width" }, label: "Theme", value: goal.theme %>
                     </div>
                     <div class="col-4">
-                      <%= f.input :goal_completion_date, label: "Completion Date", as: :date, html5: true, input_html: {class: "form-background"}, label: "Target Completion", value: goal.goal_completion_date %>
+                      <%= f.input :goal_completion_date, label: "Completion Date", as: :date, html5: true, input_html: {class: "form-background modal-field-width ms-0"}, label: "Target Completion", value: goal.goal_completion_date %>
                     </div>
                   </div>
                 </div>
@@ -123,7 +129,7 @@
     <div class="collapse" id="collapse">
       <div class="cards">
         <% @completed_goals.each do |goal| %>
-          <div class="card-category goal-card">
+          <div class="card-goal goal-card">
             <div class="goal-detail">
               <div class="goal-text">
                 <div class="goal-title text-left"><strong> <%= goal.goal_name.capitalize %></strong>
@@ -187,17 +193,15 @@
               <%= f.input :current_value, input_html: {class: "form-background modal-field-width" }, label: "Current Value" %>
             </div>
           </div>
-          <div class="data-unit">
-            <div class="row">
-              <div class="col-4">
-                <%= f.input :unit, input_html: {class: "form-background modal-field-width" }, label: "Unit" %>
-              </div>
-              <div class="col-4">
-                <%= f.input :theme, input_html: {class: "form-background modal-field-width" }, label: "Theme" %>
-              </div>
-              <div class="col-4">
-                <%= f.input :goal_completion_date, label: "Completion Date", as: :date, html5: true, input_html: {class: "form-background modal-field-width"}, label: "Target Completion" %>
-              </div>
+          <div class="row">
+            <div class="col-4">
+              <%= f.input :unit, input_html: {class: "form-background modal-field-width" }, label: "Unit" %>
+            </div>
+            <div class="col-4">
+              <%= f.input :theme, input_html: {class: "form-background modal-field-width" }, label: "Theme" %>
+            </div>
+            <div class="col-4">
+              <%= f.input :goal_completion_date, label: "Completion Date", as: :date, html5: true, input_html: {class: "form-background modal-field-width ms-0"}, label: "Target Completion" %>
             </div>
           </div>
           <div class="modal-footer">

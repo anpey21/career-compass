@@ -94,7 +94,6 @@
   text-align: center;
   padding-top: 24px;
   padding-bottom: 32px;
-  line-height: 32px;
   width: 20vw;
 }
 
@@ -110,7 +109,6 @@
   width: 200px;
   height: 200px;
   object-fit: cover;
-  line-height: 12px;
 }
 
 .card-italic {
@@ -141,6 +139,13 @@
   margin-top: 40px;
 }
 
+.cards-4 {
+  grid-template-columns: repeat(
+    4,
+    minmax(150px, 1fr)
+  ); /* update the number of columns and minmax value */
+}
+
 .circle-card-body {
   display: flex;
   flex-direction: column;
@@ -154,7 +159,6 @@
   text-align: center;
   padding-top: 24px;
   padding-bottom: 32px;
-  line-height: 32px;
   width: 250px;
 }
 
@@ -237,49 +241,103 @@ img {
 @media only screen and (max-width: 480px) {
   /* CSS styles for phones */
   .hero-container {
-    height: 60vh;
+    height: 40vh;
+    padding-top: 9vh;
+  }
+  .hero-header {
+    font-size: 6vw;
+  }
+  .hero-content {
+    max-width: 60vw;
+    font-size: 2vw;
   }
   .how-it-works-container {
-    height: 40vh;
+    height: 70vh;
   }
   .what-we-offer-container {
-    height: 40vh;
+    height: 85vh;
+  }
+  .what-we-offer-body {
+    padding-top: 5px;
   }
   .testimonials-container {
-    height: 40vh;
+    height: 70vh;
   }
   .circles-cards {
     grid-template-columns: 1fr;
   }
+  .cards-4 {
+    grid-template-columns: 1fr;
+  }
   .arrows {
     display: none;
+  }
+  .card-image > img {
+    width: 100px;
+    height: 100px;
+  }
+  .square-home-card-body {
+    width: 15vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .circle-img {
+    width: 100px;
+    height: 100px;
+  }
+  .circle-card-text {
+    width: 20vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 2vw;
+    line-height: normal;
+  }
+  .landing-pink-text {
+    font-size: 3vw;
+  }
+  .circles-cards {
+    margin-top: 5px;
+  }
+
+  .offer-card-text {
+    font-size: 2vw;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   /* CSS styles for tablets */
 
   .hero-container {
-    height: 60vh;
+    height: 50vh;
   }
   .how-it-works-container {
-    height: 40vh;
+    height: 35vh;
   }
   .what-we-offer-container {
-    height: 40vh;
+    height: 35vh;
   }
   .testimonials-container {
-    height: 40vh;
+    height: 35vh;
   }
-
-  .circles-cards {
-    grid-template-columns: 1fr;
+  .card-image > img {
+    width: 100px;
+    height: 100px;
+  }
+  .square-home-card-body {
+    width: 15vw;
+  }
+  .circle-img {
+    width: 130px;
+    height: 130px;
+  }
+  .circle-card-text {
+    width: 20vw;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   /* CSS styles for small desktops and laptops */
 
   .hero-container {
-    height: 35vh;
+    height: 55vh;
     padding-top: 9vh;
   }
   .how-it-works-container {
@@ -312,8 +370,47 @@ img {
     height: 45vh;
   }
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) and (max-width: 1800px) {
   /* CSS styles for projectors and large screens */
+  .hero-container {
+    height: 90vh;
+    padding-top: 18vh;
+  }
+  .how-it-works-container {
+    height: 60vh;
+  }
+  .what-we-offer-container {
+    height: 70vh;
+  }
+  .testimonials-container {
+    height: 60vh;
+  }
+
+  .circle-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media only screen and (min-width: 1801px) {
+  /* CSS styles for large screens */
+  .hero-container {
+    height: 90vh;
+    padding-top: 18vh;
+  }
+  .how-it-works-container {
+    height: 50vh;
+  }
+  .what-we-offer-container {
+    height: 50vh;
+  }
+  .testimonials-container {
+    height: 50vh;
+  }
+  .circle-img {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 // Smallest device

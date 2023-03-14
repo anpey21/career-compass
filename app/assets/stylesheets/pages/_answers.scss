@@ -43,3 +43,18 @@
   width: 40%;
   padding-bottom: 20px;
 }
+
+.table {
+  color: $font-white;
+  width: fit-content;
+}
+
+.answer-table {
+}
+table th {
+  width: auto !important;
+}
+
+.center-radio {
+  text-align: center;
+}

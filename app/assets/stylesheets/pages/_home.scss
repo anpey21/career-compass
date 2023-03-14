@@ -5,7 +5,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 90vh;
   padding: 0;
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@
   padding-top: 24px;
   padding-bottom: 32px;
   color: $font-white;
-  font-size: 18px;
+  font-size: 2vb;
   line-height: 32px;
 }
 
@@ -177,7 +177,7 @@
 .arrows path {
   stroke: $text-pink;
   fill: transparent;
-  stroke-width: 1px;
+  stroke-width: 2px;
   animation: arrow 2s infinite;
   -webkit-animation: arrow 2s infinite;
 }

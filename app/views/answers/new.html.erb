@@ -1,13 +1,13 @@
 <div class="answers-container">
   <div class="option-header">
-    <h2>Please rate your <%= @career_options.first == @career_option ? "first" : "second" %> career option as a
+    <h2>Please rate your <%= @career_options.first == @career_option ? "first" : "second" %> career option -
       <span class="pink"> <%= @career_option.option %></span>
     </h2>
   </div>
-  <table class="table-dark ">
+  <table class="table-dark mb-3">
     <thead>
-      <tr>
-        <th scope="col" style="padding: 10px;">Question</th>
+      <tr class="th-top">
+        <th class="questions" scope="col" style="padding: 10px;"></th>
         <th scope="col" style="padding: 10px;">Poor</th>
         <th scope="col" style="padding: 10px;">Okay</th>
         <th scope="col" style="padding: 10px;">Good</th>
@@ -29,6 +29,6 @@
         <% end %>
       </tbody>
     </table>
-    <%= submit_tag "Next", class: "hero-btn align-self-center" %>
+    <%= submit_tag "Next", class: "priorities-btn align-self-center mt-3" %>
   <% end %>
 </div>

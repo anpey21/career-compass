@@ -32,7 +32,7 @@ two = CareerOption.create(option: "Data Scientist", user_id: tom.id)
 # seed for priorities for user 1. Priorities are salary,impact,work/life, balance,location,status,stability,progression. scored between 1 and 10
 
 psalary = Priority.create(priority_name: "Salary", score: 10, user_id: tom.id)
-pimpact = Priority.create(priority_name: "Impact", score: 8, user_id: tom.id)
+pimpact = Priority.create(priority_name: "Social Impact", score: 8, user_id: tom.id)
 pbalance = Priority.create(priority_name: "Work/life balance", score: 8, user_id: tom.id)
 plocation = Priority.create(priority_name: "Location", score: 5, user_id: tom.id)
 pstatus = Priority.create(priority_name: "Status", score: 2, user_id: tom.id)
@@ -41,13 +41,13 @@ pprogression = Priority.create(priority_name: "Progression", score: 6, user_id: 
 
 # seed for questions for user 1. Questions are salary,impact,work/life, balance,location,status,stability,progression.
 
-salary = Question.create(question: "How happy are you with the salary that this job offers?", priority_id: psalary.id)
-impact = Question.create(question: "Does this company make an impact in your field of choice?", priority_id: pimpact.id)
-balance = Question.create(question: "Does this company offer a good work/life balance?", priority_id: pbalance.id)
-location = Question.create(question: "How would you rate the location of this career choice?", priority_id: plocation.id)
-status = Question.create(question: "Will this company offer you the prestige you're looking for?", priority_id: pstatus.id)
-stability = Question.create(question: "Do you see this option as having long term potential?", priority_id: pstability.id)
-progression = Question.create(question: "Does this company offer the career growth potential that you're looking for?", priority_id: pprogression.id)
+salary = Question.create(question: "Salary", priority_id: psalary.id)
+impact = Question.create(question: "Impact", priority_id: pimpact.id)
+balance = Question.create(question: "Work/Life Balance", priority_id: pbalance.id)
+location = Question.create(question: "Location", priority_id: plocation.id)
+status = Question.create(question: "Status", priority_id: pstatus.id)
+stability = Question.create(question: "Stability", priority_id: pstability.id)
+progression = Question.create(question: "Career Growth Potential", priority_id: pprogression.id)
 
 # seed for answers with question id,career_option id, and score between 1 and 5 for career option 1 and 2
 

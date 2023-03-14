@@ -1,4 +1,5 @@
 <div class="hero-container">
+  <div class="container">
   <div class="hero-header">Take Control Of Your Career</div>
   <div class="hero-content">
     <div class="hero-content-text aigerim mb-5">
@@ -12,11 +13,10 @@
       <% end %>
     </div>
   </div>
+  </div>
   <div class="centered-arrows">
     <svg class="arrows">
-      <a
-        href="#scroll-box"
-      >
+      <a href="#scroll-box">
         <path class="a1" d="M0 0 L30 32 L60 0"></path>
         <path class="a2" d="M0 20 L30 52 L60 20"></path>
         <path class="a3" d="M0 40 L30 72 L60 40"></path>
@@ -24,16 +24,18 @@
     </svg>
   </div>
 </div>
+
+
 <div class="how-it-works-container">
   <div class="landing-pink-text">How our career decision system works</div>
-  <div class="circles-cards p-30"  id="scroll-box">
+  <div class="circles-cards p-30">
     <div class="circle-card-body">
       <%= image_tag "option1.jpg", class: "circle-img" %>
       <div class="circle-card-text">Tell us your options</div>
     </div>
     <div class="circle-card-body">
       <%= image_tag "lightbulb.png", class: "circle-img" %>
-      <div class="circle-card-text">Fill out the decision wizard</div>
+      <div class="circle-card-text" id="scroll-box">Fill out the decision wizard</div>
     </div>
     <div class="circle-card-body">
       <%= image_tag "laptopguys.png", class: "circle-img" %>

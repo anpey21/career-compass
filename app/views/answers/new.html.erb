@@ -4,6 +4,7 @@
       <span class="pink"> <%= @career_option.option %></span>
     </h2>
   </div>
+      <%= form_tag url_for(action: 'create'), method: "post", class: "w-50 d-flex flex-column" do %>
   <table class="table-dark mb-3">
     <thead>
       <tr class="th-top">
@@ -16,7 +17,6 @@
       </tr>
     </thead>
     <tbody>
-      <%= form_tag url_for(action: 'create'), method: "post" do %>
         <% Question.all.each do |question| %>
           <tr>
             <th scope="row"><%= question.question %></th>

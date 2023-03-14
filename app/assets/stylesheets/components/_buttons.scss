@@ -47,13 +47,14 @@
 
 .priorities-btn {
   border-radius: $border-radius;
-  color: $primary-pink;
+  color: $font-white;
   border: 1px solid $primary-pink;
   background-color: transparent;
-  width: 60%;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  width: 20%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   align-self: center;
+  font-size: 18px;
 }
 
 .priorities-btn:hover {

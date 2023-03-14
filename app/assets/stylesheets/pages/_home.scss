@@ -41,9 +41,8 @@
 
 .hero-text h1 {
   font-size: 64px;
-  font-weight: $medium-bold;
   color: $primary-pink;
-  font-family: "Nunito", sans-serif;
+  font-family: $body-font-c;
 }
 
 .hero-text p {
@@ -57,7 +56,6 @@
 
 .logo-text {
   font-size: 14px;
-  font-weight: $regular-font;
   color: $text-pink;
   margin: 0;
 }
@@ -75,8 +73,7 @@
 
 .landing-pink-text {
   font-size: 24px;
-  font-family: "nunito", sans-serif;
-  font-weight: 400;
+  font-family: $body-font-c;
   color: $text-pink;
   text-align: center;
   padding-top: 50px;
@@ -113,7 +110,7 @@
 
 .square-home-card-body {
   font-size: 16px;
-  font-weight: $regular-font;
+  font-weight: $body-font-c;
   color: $font-white;
   text-align: center;
   padding-top: 24px;
@@ -177,7 +174,6 @@
 
 .circle-card-text {
   font-size: 16px;
-  font-weight: $regular-font;
   color: $font-white;
   text-align: center;
   padding-top: 24px;

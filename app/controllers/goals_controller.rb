@@ -22,7 +22,6 @@ class GoalsController < ApplicationController
     if @goal.save
       redirect_to goals_path
     else
-      raise
       render :new
     end
   end

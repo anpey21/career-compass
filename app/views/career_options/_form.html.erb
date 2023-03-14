@@ -3,10 +3,10 @@
             <h1>Please enter your <%= current_user.career_options.count.even? ? "first" : "second" %> option</h1>
 
       </div>
-    <div class="option-form">
+    <div class="option-form mb-3">
       <%= simple_form_for @career_option do |f| %>
           <%= f.input :option, label: false, input_html: {class: "option-input"} %>
-          <%= f.submit "Next", :class => "priorities-btn" %>
+          <%= f.submit "Next", :class => "options-btn mt-3" %>
       <% end %>
     </div>
   </div>

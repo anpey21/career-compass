@@ -1,6 +1,6 @@
 class PrioritiesController < ApplicationController
   def new
-    @priorities = ["Salary", "Impact", "Work/life balance", "Location", "Status", "Stability", "Progression"]
+    @priorities = ["Salary", "Social Impact", "Work/life balance", "Location", "Status", "Stability", "Progression"]
     number_of_priorities_salary = current_user.priorities.where(priority_name: "Salary").count
     @order = (current_user.priorities.count % 7)
     @priority = Priority.new
@@ -22,7 +22,7 @@ class PrioritiesController < ApplicationController
         redirect_to new_priority_path
       end
     else
-      @priorities = ["Salary", "Impact", "Work/life balance", "Location", "Status", "Stability", "Progression"]
+      @priorities = ["Salary", "Social Impact", "Work/life balance", "Location", "Status", "Stability", "Progression"]
       @order = (current_user.priorities.count % 7)
       render :new
     end

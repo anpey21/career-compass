@@ -9,7 +9,7 @@
 
 .option-header {
   margin-top: 6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
   font-size: 2rem;
   font-weight: 600;
   color: $font-white;
@@ -22,10 +22,11 @@
   border: 1px solid $primary-pink;
   background-color: #fa469205 !important;
   color: white !important;
+  margin-bottom: 40px;
 }
 
 .option-input:focus {
-  border: none;
+  border: none; //doesn't work
 }
 
 .option-form {

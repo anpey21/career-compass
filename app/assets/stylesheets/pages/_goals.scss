@@ -14,12 +14,16 @@
   height: 100%;
   background-color: #222;
   border-radius: $border-radius;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .progress-bar-fill {
   height: 100%;
   background-color: #53eddb;
   border-radius: $border-radius;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .goal-card {

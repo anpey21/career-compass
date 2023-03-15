@@ -1,5 +1,5 @@
 meta_product_name: 'Career Compass'
 meta_title: 'Career Compass - Take Control Of Your Career'
 meta_description: 'Career Compass is a career development tool that helps you take control of your career. It helps you identify your priorities, and provides you with a personalized advise.'
-meta_image: 'staircase-high-res.jpg' # should exist in `app/assets/images/`
+meta_image: 'cover.png' # should exist in `app/assets/images/`
 twitter_account: '@lewagon' # required for Twitter Cards

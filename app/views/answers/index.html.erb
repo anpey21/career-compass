@@ -1,6 +1,11 @@
 <div class="parent">
   <div class="div1">
-    <div class="chart-title text-center" style="height: 10%;">Your Total Score</div>
+    <div class="chart-title text-center" style="height: 10%;">Your Total Score 
+      <div class="popover-container">
+        <i class="fas fa-info-circle ml-1"></i>
+        <div class="popover-text">Popover content for Your Total Score</div>
+      </div>
+    </div>
     <%= column_chart(@career_options_and_scores,
                       id: "users-chart",
                       colors: ["#ed5187", "#2ba1ac"],

@@ -5,10 +5,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 85vh;
+  height: 90vh;
   color: $font-white;
   padding: 0;
-  padding-top: 8vh;
+  padding-top: 18vh;
   padding-left: 50px;
   padding-right: 0px;
   display: flex;
@@ -16,20 +16,24 @@
 }
 
 .hero-header {
-  font-size: 64px;
+  font-size: 5vw;
   color: $primary-pink;
   padding-bottom: 30px;
-  font-family: $body-font-c;
+  font-family: $hero-header;
 }
 
 .hero-cta {
   display: flex;
-
   padding-bottom: 20px;
 }
 
 .hero-content {
-  max-width: 500px;
+  max-width: 35vw;
+  font-size: 1.5vw;
+}
+
+.vw-2 {
+  font-size: 2vw !important;
 }
 
 .hero-text {
@@ -39,44 +43,18 @@
   align-items: left;
 }
 
-.hero-text h1 {
-  font-size: 64px;
-  font-weight: $medium-bold;
-  color: $primary-pink;
-  font-family: "Nunito", sans-serif;
-}
-
 .hero-text p {
   max-width: 500px;
   padding-top: 24px;
   padding-bottom: 32px;
   color: $font-white;
-  font-size: 24px;
+  font-size: 2vb;
   line-height: 32px;
 }
 
-.logo-text {
-  font-size: 14px;
-  font-weight: $regular-font;
-  color: $text-pink;
-  margin: 0;
-}
-
-.aigerim {
-  font-size: 18px;
-}
-
-.hero-footer {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-}
-
 .landing-pink-text {
-  font-size: 24px;
-  font-family: "nunito", sans-serif;
-  font-weight: 400;
+  font-size: 2.2vw;
+  font-family: $body-font-c;
   color: $text-pink;
   text-align: center;
   padding-top: 50px;
@@ -90,22 +68,20 @@
 }
 
 .how-it-works-container {
-  height: 500px;
+  height: 60vh;
 }
 .what-we-offer-container {
   background-image: url(asset-path("landingsunrise.png"));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 60vh;
 }
 
 .what-we-offer-body {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
   text-align: center;
   padding-top: 40px;
   padding-bottom: 50px;
@@ -113,18 +89,19 @@
 
 .square-home-card-body {
   font-size: 16px;
-  font-weight: $regular-font;
+  font-weight: $body-font-c;
   color: $font-white;
   text-align: center;
   padding-top: 24px;
   padding-bottom: 32px;
-  line-height: 32px;
+  width: 20vw;
 }
 
 .offer-card-text {
   margin: 4px;
   padding: 0;
   color: $font-white;
+  font-size: 1.5vw;
 }
 
 .card-image > img {
@@ -132,11 +109,10 @@
   width: 200px;
   height: 200px;
   object-fit: cover;
-  line-height: 12px;
 }
 
 .card-italic {
-  font-size: 12px;
+  font-size: 1.2vw;
   color: $font-white;
   padding: 0;
 }
@@ -150,11 +126,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px;
-}
-
-.how-it-works-container {
-  height: 500px;
+  height: 60vh;
 }
 
 .circles-cards {
@@ -167,6 +139,12 @@
   margin-top: 40px;
 }
 
+.cards-4 {
+  grid-template-columns: repeat(
+    4,
+    minmax(150px, 1fr)
+  ); /* update the number of columns and minmax value */
+}
 
 .circle-card-body {
   display: flex;
@@ -176,14 +154,12 @@
 }
 
 .circle-card-text {
-  font-size: 16px;
-  font-weight: $regular-font;
+  font-size: 1.2vw;
   color: $font-white;
   text-align: center;
   padding-top: 24px;
   padding-bottom: 32px;
-  line-height: 32px;
-  width: 200px;
+  width: 250px;
 }
 
 .arrows {
@@ -193,19 +169,22 @@
   margin-top: 75px;
   text-align: center;
   cursor: pointer;
-
 }
 
 .centered-arrows {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .arrows path {
   stroke: $text-pink;
   fill: transparent;
-  stroke-width: 1px;
+  stroke-width: 2px;
   animation: arrow 2s infinite;
   -webkit-animation: arrow 2s infinite;
 }
@@ -255,69 +234,228 @@
   -webkit-animation-delay: 0s;
 }
 
-
 img {
   border-radius: 4px;
 }
 
+@media only screen and (max-width: 480px) {
+  /* CSS styles for phones */
+  .hero-container {
+    height: 40vh;
+    padding-top: 9vh;
+  }
+  .hero-header {
+    font-size: 6vw;
+  }
+  .hero-content {
+    max-width: 60vw;
+    font-size: 2vw;
+  }
+  .how-it-works-container {
+    height: 70vh;
+  }
+  .what-we-offer-container {
+    height: 85vh;
+  }
+  .what-we-offer-body {
+    padding-top: 5px;
+  }
+  .testimonials-container {
+    height: 70vh;
+  }
+  .circles-cards {
+    grid-template-columns: 1fr;
+  }
+  .cards-4 {
+    grid-template-columns: 1fr;
+  }
+  .arrows {
+    display: none;
+  }
+  .card-image > img {
+    width: 100px;
+    height: 100px;
+  }
+  .square-home-card-body {
+    width: 15vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .circle-img {
+    width: 100px;
+    height: 100px;
+  }
+  .circle-card-text {
+    width: 20vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 2vw;
+    line-height: normal;
+  }
+  .landing-pink-text {
+    font-size: 3vw;
+  }
+  .circles-cards {
+    margin-top: 5px;
+  }
+
+  .offer-card-text {
+    font-size: 2vw;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  /* CSS styles for tablets */
+
+  .hero-container {
+    height: 50vh;
+  }
+  .how-it-works-container {
+    height: 35vh;
+  }
+  .what-we-offer-container {
+    height: 35vh;
+  }
+  .testimonials-container {
+    height: 35vh;
+  }
+  .card-image > img {
+    width: 100px;
+    height: 100px;
+  }
+  .square-home-card-body {
+    width: 15vw;
+  }
+  .circle-img {
+    width: 130px;
+    height: 130px;
+  }
+  .circle-card-text {
+    width: 20vw;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* CSS styles for small desktops and laptops */
+
+  .hero-container {
+    height: 55vh;
+    padding-top: 9vh;
+  }
+  .how-it-works-container {
+    height: 35vh;
+  }
+  .what-we-offer-container {
+    height: 35vh;
+  }
+  .testimonials-container {
+    height: 35vh;
+  }
+  .card-image > img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  /* CSS styles for large desktops and laptops */
+  .hero-container {
+    height: 60vh;
+    padding-top: 9vh;
+  }
+  .how-it-works-container {
+    height: 45vh;
+  }
+  .what-we-offer-container {
+    height: 45vh;
+  }
+  .testimonials-container {
+    height: 45vh;
+  }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1800px) {
+  /* CSS styles for projectors and large screens */
+  .hero-container {
+    height: 90vh;
+    padding-top: 18vh;
+  }
+  .how-it-works-container {
+    height: 60vh;
+  }
+  .what-we-offer-container {
+    height: 70vh;
+  }
+  .testimonials-container {
+    height: 60vh;
+  }
+
+  .circle-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media only screen and (min-width: 1801px) {
+  /* CSS styles for large screens */
+  .hero-container {
+    height: 90vh;
+    padding-top: 18vh;
+  }
+  .how-it-works-container {
+    height: 50vh;
+  }
+  .what-we-offer-container {
+    height: 50vh;
+  }
+  .testimonials-container {
+    height: 50vh;
+  }
+  .circle-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+/* @media (min-width: 100px) and (max-width: 380px) {
   .circles-cards {
     grid-template-columns: 1fr;
   }
   .hero-header {
-    font-size: 24px;
+    font-size: 32px;
   }
-
-  .hero-container {
-    padding-left: 30px;
-    padding-right: 30px;
+  .arrows {
+    display: none;
   }
-}
-
-@media (min-width: 100px) and (max-width: 759px) {
-  .how-it-works-container {
-    height: 1000px;
-  }
-}
-
-@media (min-width: 100px) and (max-width: 863px) {
-  .what-we-offer-container {
-    height: 900px;
-  }
-}
-
-@media (min-width: 760px) and (max-width: 1000px) {
-  .how-it-works-container {
-    height: 700px;
-  }
-}
+} */
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+/* @media (min-width: 576px) and (max-width: 768px) {
   .circles-cards {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+/* @media (min-width: 768px) and (max-width: 992px) {
   .circles-cards {
     grid-template-columns: 1fr 1fr;
   }
-}
+} */
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+/* @media (min-width: 992px) and (max-width: 1200px) {
   .circles-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
+} */
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .circles-cards {
-    grid-template-columns: 1fr 1fr 1fr;
-    
-  }
-}
+// @media (min-width: 1200px) and (max-width: 2500px) {
+//   .how-it-works-container {
+//     max-height: 70vh;
+//   }
+//   .what-we-offer-container {
+//     max-height: 70vh;
+//   }
+//   .testimonials-container {
+//     max-height: 70vh;
+//   }
+// }

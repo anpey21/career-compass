@@ -47,15 +47,32 @@
 
 .priorities-btn {
   border-radius: $border-radius;
-  color: $primary-pink;
+  color: $font-white;
   border: 1px solid $primary-pink;
   background-color: transparent;
-  width: 60%;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  width: 10%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   align-self: center;
+  font-size: 18px;
 }
 
 .priorities-btn:hover {
+  color: $text-pink;
+}
+
+.options-btn {
+  border-radius: $border-radius;
+  color: $font-white;
+  border: 1px solid $primary-pink;
+  background-color: transparent;
+  width: 20%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  align-self: center;
+  font-size: 18px;
+}
+
+.options-btn:hover {
   color: $text-pink;
 }

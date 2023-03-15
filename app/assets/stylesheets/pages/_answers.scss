@@ -4,9 +4,6 @@
   margin-bottom: 10px;
 }
 
-.answers-form input[type="radio"] {
-}
-
 .answers-form div {
   display: flex;
 }
@@ -43,3 +40,80 @@
   width: 40%;
   padding-bottom: 20px;
 }
+
+.table {
+  color: $font-white;
+  width: fit-content;
+}
+
+
+table th {
+  width: auto !important;
+}
+
+.center-radio {
+  text-align: center;
+}
+
+//Aigerim's add-ons
+
+.table-dark {
+  border-collapse: collapse;
+  width: 100%;
+  height: 50%;
+  [type=checkbox],[type=radio] { //radio buttons styling
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border: 1px solid $primary-pink;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 2px;
+    top: 5px;
+}
+  [type="radio"]:checked {
+  background-color: $primary-pink;
+  border-color: $primary-pink;
+  background-image: none;
+}
+
+  [type="radio"]:hover {
+  background-color: $primary-pink;
+  transition-timing-function: ease-in;
+  color: $font-white
+}
+}
+
+.table-dark td, .table-dark th {
+  border: 1px solid #222;
+  padding: 12px;
+  width: 14%;
+}
+
+.table-dark tr:nth-child(even){background-color: #222;}
+
+.table-dark tr:hover {
+  color: $primary-pink;
+}
+
+.th-top:hover {color: $even-lighter-bg-grey !important;}
+
+.table-dark .th-top {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: $even-lighter-bg-grey;
+}
+
+.th-top {
+  background-color: #222;
+}
+
+//i want them to move to the left
+.questions {
+  text-align: left !important;
+}
+
+
+//add shadow to the whole table

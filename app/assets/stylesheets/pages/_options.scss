@@ -4,13 +4,12 @@
   align-items: center;
   justify-content: center;
   height: 60vh;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   // maybe set height to 60vh?
 }
 
 .option-header {
   margin-top: 6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
   font-size: 2rem;
   font-weight: 600;
   color: $font-white;
@@ -20,9 +19,14 @@
 
 .option-input {
   background: none;
-  border: 1px solid $text-pink;
+  border: 1px solid $primary-pink;
   background-color: #fa469205 !important;
   color: white !important;
+  margin-bottom: 40px;
+}
+
+.option-input:focus {
+  border: none; //doesn't work
 }
 
 .option-form {

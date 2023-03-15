@@ -163,6 +163,11 @@
   }
 }
 
+.popover-style {
+  color: $even-lighter-bg-grey;
+  opacity: 0.5;
+}
+
 @media (max-width: 738px) {
   .top-option {
     font-size: 6vw;

@@ -3,7 +3,7 @@
     <div class="chart-title text-center" style="height: 10%;">Your Total Score</div>
     <%= column_chart(@career_options_and_scores,
                       id: "users-chart",
-                      colors: ["#e21d60", "#00bfbd"],
+                      colors: ["#ed5187", "#2ba1ac"],
                       label: "Cumulative Score",
                       ytitle: "Weighted Score",
                       height: "90%",
@@ -44,7 +44,7 @@
   </div>
   <div class="div3">
     <div class="chart-title text-center" style="height: 10%;">Your Priorities</div>
-    <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#e21d60"], min: 0, max: 10, xtitle: "Score", height: "90%", width: "90%",  library: {
+    <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#ed5187"], min: 0, max: 10, xtitle: "Score", height: "90%", width: "90%",  library: {
 scales: {
 x: {
 title: {
@@ -68,7 +68,7 @@ color: "white"
   </div>
   <div class="div4">
     <div class="chart-title text-center"  style="height: 10%;">Your scores comparison</div>
-    <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score", legend: true, height: "90%", width: "100%",  library: {
+    <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#ed5187", "#2ba1ac"],label: "Cumulative Score", ytitle: "Weighted Score", legend: true, height: "90%", width: "100%",  library: {
 scales: {
 x: {
 title: {

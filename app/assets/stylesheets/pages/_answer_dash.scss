@@ -47,7 +47,12 @@
   justify-content: space-evenly;
   text-align: center;
   font-size: 1vw;
+  align-items: center;
+  .middle {
+    width: 80%;
+  }
 }
+
 .div3 {
   grid-area: 1 / 5 / 2 / 7;
   height: calc((93vh - 60px) / 2);

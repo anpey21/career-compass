@@ -26,6 +26,12 @@
   border-bottom-left-radius: 0;
 }
 
+.goal-percentage {
+  align-self: center;
+  font-size: 1.3vw;
+  color: $primary-pink;
+}
+
 .goal-card {
   display: flex;
   padding-top: 0px;
@@ -40,7 +46,7 @@
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 500px;
+  width: 510px;
 }
 
 .goal-text {
@@ -121,6 +127,10 @@
   background-color: $primary-pink;
 
   color: $font-white !important;
+  // hover
+  .goal-percentage {
+    color: $font-white !important;
+  }
 }
 
 // Smallest device

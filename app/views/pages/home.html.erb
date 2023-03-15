@@ -1,5 +1,4 @@
 <div class="hero-container">
-  <div class="container">
   <div class="hero-header">Take control of your career</div>
   <div class="hero-content">
     <div class="hero-content-text aigerim mb-5">
@@ -7,12 +6,11 @@
     </div>
     <div class="hero-cta">
       <% if user_signed_in? %>
-        <%= link_to "Your Personal Dashboard", dashboard_path, class: "btn-ghost text-center mt-3 w-75 h-40" %>
+        <%= link_to "Your Personal Dashboard", dashboard_path, class: "btn-ghost text-center mt-3 w-75 vw-2" %>
       <% else %>
-        <%= link_to "Get Started", new_user_registration_path, class:"btn-ghost text-center mt-3 w-75 h-40" %>
+        <%= link_to "Get Started", new_user_registration_path, class:"btn-ghost text-center mt-3 w-75 vw-2" %>
       <% end %>
     </div>
-  </div>
   </div>
   <div class="centered-arrows">
     <svg class="arrows">
@@ -24,8 +22,6 @@
     </svg>
   </div>
 </div>
-
-
 <div class="how-it-works-container">
   <div class="landing-pink-text">How our career decision system works</div>
   <div class="circles-cards p-30">
@@ -46,40 +42,42 @@
 <div class="what-we-offer-container">
   <div class= "landing-pink-text">What we offer</div>
   <div class="what-we-offer-body">
-    <div class="square-home-card-body">
-      <div class="circle-card-body">
-        <div class="card-image">
-          <%= image_tag "decision.jpg" %>
+    <div class="circles-cards cards-4">
+      <div class="square-home-card-body">
+        <div class="circle-card-body">
+          <div class="card-image">
+            <%= image_tag "decision.jpg" %>
+          </div>
+          <div class= "offer-card-text">Decision Wizard</div>
+          <span class="card-italic"><em>Use data to decide between career options</em></span>
         </div>
-        <div class= "offer-card-text">Decision Wizard</div>
-        <span class="card-italic"><em>Use data to help decide between two career options</em></span>
       </div>
-    </div>
-    <div class="square-home-card-body">
-      <div class="circle-card-body">
-        <div class="card-image">
-          <%= image_tag "career-resources.jpg" %>
+      <div class="square-home-card-body">
+        <div class="circle-card-body">
+          <div class="card-image">
+            <%= image_tag "career-resources.jpg" %>
+          </div>
+          <div class= "offer-card-text">Resources</div>
+          <span class="card-italic"><em>Resources to help your career</em></span>
         </div>
-        <div class= "offer-card-text">Resources</div>
-        <span class="card-italic"><em>Find resources to help you with your career</em></span>
       </div>
-    </div>
-    <div class="square-home-card-body">
-      <div class="circle-card-body">
-        <div class="card-image">
-          <%= image_tag "coaching.jpg" %>
+      <div class="square-home-card-body">
+        <div class="circle-card-body">
+          <div class="card-image">
+            <%= image_tag "coaching.jpg" %>
+          </div>
+          <div class= "offer-card-text">Coaching</div>
+          <span class="card-italic"><em>Connect with world class coaches</em></span>
         </div>
-        <div class= "offer-card-text">Coaching</div>
-        <span class="card-italic"><em>Connect with world class coaches</em></span>
       </div>
-    </div>
-    <div class="square-home-card-body">
-      <div class="circle-card-body">
-        <div class="card-image">
-          <%= image_tag "goals.jpg" %>
+      <div class="square-home-card-body">
+        <div class="circle-card-body">
+          <div class="card-image">
+            <%= image_tag "goals.jpg" %>
+          </div>
+          <div class= "offer-card-text">Goal Tracking</div>
+          <span class="card-italic"><em>Track your career goals</em></span>
         </div>
-        <div class= "offer-card-text">Goal Tracking</div>
-        <span class="card-italic"><em>Track your career goals</em></span>
       </div>
     </div>
   </div>

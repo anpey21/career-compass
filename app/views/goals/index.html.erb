@@ -18,6 +18,8 @@
               </i>
             </div>
           </div>
+          <div class="goal-percentage">
+            <%= (( goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100).round %>%</div>
           <div class="goal-actions">
             <i class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal-<%= goal.id %>"></i>
             <i class="fa-solid fa-circle-check" data-bs-toggle="modal" data-bs-target="#completeModal-<%= goal.id %>"></i>
@@ -25,11 +27,6 @@
           </div>
         </div>
         <div class="progress-bar">
-          <% if ((goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100) > 0  %>
-            You're <%= ((goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100).round(0) %>% of the way there!
-          <% else %>
-            Enter your current status to see your progress!
-          <% end %>
           <div class="progress-bar-fill" style="width: <%= (goal.current_value.to_f - goal.start_value) / (goal.target_value - goal.start_value) * 100 %>%;">
           </div>
         </div>

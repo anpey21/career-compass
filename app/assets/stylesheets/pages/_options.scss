@@ -25,12 +25,20 @@
   margin-bottom: 40px;
 }
 
+
+
 .option-input:focus {
-  border: none; //doesn't work
+  outline: none;
+  border: 2px solid $primary-pink;
 }
+
 
 .option-form {
   width: 60%;
   max-width: 500px;
   text-align: center;
+}
+
+.form-control:focus {
+  box-shadow: none;
 }

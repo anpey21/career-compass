@@ -116,4 +116,25 @@ table th {
 }
 
 
-//add shadow to the whole table
+@media only screen and (max-width: 768px) {
+  /* Adjust table font size and padding for smaller screens */
+  .table-dark td, .table-dark th {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Make form narrower for smaller screens */
+  .answers-form {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+   /* Make form even narrower for extra small screens */
+  .answers-form {
+    width: 65%;
+  }
+  .priorities-btn {
+    width: 50% !important;
+  }
+}

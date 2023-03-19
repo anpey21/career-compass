@@ -7,7 +7,7 @@
     <% end %>
     <%= link_to "Career Challenge", new_career_option_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
     <%= link_to "Your Goals", goals_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
-    <%= link_to "Find a coach", "https://mentor-me.herokuapp.com/", class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
+    <%= link_to "Find a coach", mentors_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
     <%= link_to "Search our resources", root_path, class: "w3-bar-item w3-button hover-sidebar-list mb-4" %>
   </div>
   <div class="container-dashboard mt-0 pe-4" style="margin-left:20%">
@@ -17,7 +17,7 @@
       </div>
       <%= link_to "Take our career challenge!", new_career_option_path, class:"btn-ghost text-center mt-5 w-270 h-40" %>
     </div>
-    <div class="cards">
+    <div class="dashboard-cards">
       <div class="chart-title text-center mb-0">Recommended for you</div>
       <%= link_to "https://hbr.org/2023/02/career-sponsorship-is-a-two-way-street", class: "text-decoration-none " do %>
         <div class="card-category" >

@@ -18,8 +18,8 @@ CareerOption.destroy_all
 Question.destroy_all
 Priority.destroy_all
 Goal.destroy_all
+Mentor.destroy_all
 User.destroy_all
-
 
 puts "creating seed..."
 tom = User.create(name: "tom", email: "tom@gmail.com", password: "password")
@@ -68,4 +68,29 @@ Answer.create(question_id: status.id, career_option_id: two.id, score: 4)
 Answer.create(question_id: stability.id, career_option_id: two.id, score: 3)
 Answer.create(question_id: progression.id, career_option_id: two.id, score: 2)
 
+# Seeds for mentors index and show page
+sara = Mentor.new(first_name: "Sarah", last_name: "Smith", bio: "I am a software engineer with 10 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Software Engineering", experience: 10, price_per_hour: 50, country: "United States", user: tom)
+file = File.open(Rails.root.join("app/assets/images/sara.png"))
+sara.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+sara.save
+andreas = Mentor.new(first_name: "Andreas", last_name: "Smith", bio: "I am a data scientist with 5 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Web Development", experience: 5, price_per_hour: 50, country: "Ireland", user: tom)
+file = File.open(Rails.root.join("app/assets/images/Andreas.jpg"))
+andreas.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+andreas.save
+gareth = Mentor.new(first_name: "Gareth", last_name: "Smith", bio: "I am a data scientist with 5 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Data Science", experience: 5, price_per_hour: 50, country: "Indonesia", user: tom)
+file = File.open(Rails.root.join("app/assets/images/gareth.png"))
+gareth.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+gareth.save
+andrea = Mentor.new(first_name: "Andrea", last_name: "Smith", bio: "I am a data scientist with 5 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Web Development", experience: 5, price_per_hour: 50, country: "Italy", user: tom)
+file = File.open(Rails.root.join("app/assets/images/Katrina.jpg"))
+andrea.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+andrea.save
+tomas = Mentor.new(first_name: "Tomas", last_name: "Smith", bio: "I am a data scientist with 5 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Data Science", experience: 5, price_per_hour: 50, country: "Australia", user: tom)
+file = File.open(Rails.root.join("app/assets/images/tomas.jpg"))
+tomas.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+tomas.save
+larry = Mentor.new(first_name: "Larry", last_name: "Smith", bio: "I am a data scientist with 5 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Web Development", experience: 5, price_per_hour: 50, country: "United States", user: tom)
+file = File.open(Rails.root.join("app/assets/images/larry.png"))
+larry.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+larry.save
 puts "Seeded database"

@@ -62,7 +62,7 @@
   height: 40px !important;
 }
 
-.cards {
+.dashboard-cards {
   // display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
   // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -72,7 +72,7 @@
   align-items: stretch;
 }
 
-.cards-h3 {
+.dashboard-cards-h3 {
   color: $font-white !important;
 }
 
@@ -139,7 +139,7 @@ a {
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
+  .dashboard-cards {
     grid-template-columns: 1fr;
   }
   .card-category {
@@ -150,7 +150,7 @@ a {
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .cards {
+  .dashboard-cards {
     grid-template-columns: 1fr;
   }
   .card-category {
@@ -160,7 +160,7 @@ a {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .cards {
+  .dashboard-cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
   .card-category {
@@ -170,7 +170,7 @@ a {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .cards {
+  .dashboard-cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
@@ -181,7 +181,7 @@ a {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .cards {
+  .dashboard-cards {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   .card-category {

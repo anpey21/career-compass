@@ -1,0 +1,43 @@
+<div class='container'>
+  <div class="header-text"><h2>Career Coaches</h2></div>
+    <div class="form-container">
+      <%= form_tag mentors_path, method: :get, class: "mentor-form" do %>
+        <div class="form-group">
+          <%= label_tag :country, "Country", class: "label-text" %>
+          <%= select_tag :country, options_for_select([['', '']] + Mentor.pluck(:country).uniq.compact.reject(&:blank?).map{|c| [c,c]}, params[:country]), class: "input-field", id: "country-select" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :field, "Field", class: "label-text"  %>
+          <%= select_tag :field, options_for_select([['', '']] + Mentor.pluck(:field).uniq.compact.reject(&:blank?).map{|f| [f,f]}, params[:field]), class: "input-field", id: "field-select" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :price_per_hour, "Price per hour $USD", class: "label-text" %>
+          <%= number_field_tag :price_per_hour, params[:price_per_hour], class: "input-field" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :experience, "Experience (in years)", class: "label-text"  %>
+          <%= number_field_tag :experience, params[:experience], class: "input-field" %>
+        </div>
+        <div class="form-group form-actions">
+          <%= submit_tag "Filter", class: "options-btn", id: "filter-btn" %>
+          <%= link_to "Clear", mentors_path, class: "clear-btn" %>
+        </div>
+      <% end %>
+    </div>
+  <div class="cards" id="mentors-list">
+    <% @mentors.each do |mentor| %>
+    <%= link_to mentor_path(mentor), class: "random" do %>
+    <% url = "" %>
+      <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path mentor.photo.key, height: 200, width: 350, crop: :fill %>')">
+        <div class="main-head-mentors"><%= mentor.first_name.capitalize %> </div>
+          <div class="sub-head-mentors">
+            <em><%= mentor.field %></em>
+            <br>
+            <em><%= mentor.country %></em>
+            <br>
+            <em>$<%= mentor.price_per_hour %>/hour</em>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>

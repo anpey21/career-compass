@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   resources :priorities, only: [:new, :create, :edit, :update]
   resources :goals
+  resources :mentors, only: [:index, :show, :edit, :update]
 end

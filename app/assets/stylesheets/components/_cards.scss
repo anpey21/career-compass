@@ -71,6 +71,7 @@
   background: transparent;
   padding: 16px;
   border-radius: 4px;
+  align-items: left;
 }
 
 .category-card {
@@ -116,7 +117,8 @@
 
 
 .header-text {
-  color: $text-pink;
+  color: $primary-pink;
+  text-align: left;
 }
 
 .sub-head-mentors {

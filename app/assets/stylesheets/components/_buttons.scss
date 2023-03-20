@@ -76,3 +76,18 @@
 .options-btn:hover {
   color: $text-pink;
 }
+
+.clear-btn {
+  border-radius: $border-radius;
+  color: $text-pink;
+  border: none;
+  background-color: transparent;
+  width: 20%;
+  margin-left: 10px;
+  align-self: center;
+  font-size: 18px;
+}
+
+.clear-btn:hover {
+  color: $text-pink;
+}

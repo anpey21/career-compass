@@ -9,3 +9,46 @@
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
 }
+
+// These are from mentor-me css
+
+.container-edit {
+  margin: 0 auto;
+  width: 50px;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.edit-header {
+  display: flex;
+  justify-content: center;
+  height: 15vh;
+  flex-grow: 1;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.head-text-box {
+  width: 80%;
+}
+
+.filter {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: transparent;
+}
+
+.login-container {
+  margin: 0 auto;
+  width: 50%;
+  padding: 0 20px;
+  margin-top: 20px;
+}

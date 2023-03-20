@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="show-page">
+    <div class="row flex">
+      <div class="col">
+        <div class="avatar-attributes">
+          <div class="header-text">
+            <h1><%= @mentor.first_name.capitalize %> <%= @mentor.last_name.capitalize %></h1>
+          </div>
+          <div class="avatar-box">
+            <% if @mentor.photo.attached? %>
+              <%= cl_image_tag @mentor.photo.key, class: "show-avatar" %>
+            <% else %>
+              <h3>Photo</h3>
+              <p>No photo uploaded yet</p>
+            <% end %>
+          </div>
+          <div class="mentor-attributes">
+            <div class="header-text">
+              <h3>Mentor Details</h3>
+            </div>
+            <p>Location: <%= @mentor.country %> </p>
+            <p>Field: <%= @mentor.field %></p>
+            <p>Price: $<%= @mentor.price_per_hour %>/hr</p>
+            <p>Experience: <%= @mentor.experience %> yrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="middle-column">
+          <div class="mentor-info">
+            <%= @mentor.bio %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

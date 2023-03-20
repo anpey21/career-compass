@@ -25,6 +25,7 @@ puts "creating seed..."
 tom = User.create(name: "tom", email: "tom@gmail.com", password: "password")
 anna = User.create(name: "anna", email: "anna@gmail.com", password: "password")
 aigerim = User.create(name: "aigerim", email: "aigerim@gmail.com", password: "password")
+sarah = User.create(name: "sarah", email: "sarah@gmail.com", password: "password")
 
 # seed for 2 career options for user 1
 
@@ -93,4 +94,20 @@ larry = Mentor.new(first_name: "Larry", last_name: "Smith", bio: "I am a data sc
 file = File.open(Rails.root.join("app/assets/images/larry.png"))
 larry.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 larry.save
+
+# seed goals for sarah
+
+Goal.create!(goal_name: "Complete Le Wagon Bootcamp", user_id: sarah.id, start_value: 0, target_value: 1, current_value: 1, unit: "completed", goal_status: "Completed", theme: "career", goal_completion_date: "2021-12-31")
+puts "goal seeded"
+Goal.create!(goal_name: "Get a job as a Software Engineer", user_id: sarah.id, start_value: 0, target_value: 1, current_value: 1, unit: "completed", goal_status: "Completed", theme: "career", goal_completion_date: "2022-04-25")
+puts "goal seeded"
+Goal.create!(goal_name: "Read 20 Books this Year", user_id: sarah.id, start_value: 0, target_value: 20, current_value: 12, unit: "books", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-25")
+puts "goal seeded"
+Goal.create!(goal_name: "Take Career Compass Test", user_id: sarah.id, start_value: 0, target_value: 1, current_value: 0, unit: "completed", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-17")
+puts "goal seeded"
+Goal.create!(goal_name: "Get 1000 readers on my blog", user_id: sarah.id, start_value: 0, target_value: 1000, current_value: 300, unit: "readers", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-17")
+puts "goal seeded"
+Goal.create!(goal_name: "Get 1000 followers on my professional twitter", user_id: sarah.id, start_value: 0, target_value: 1000, current_value: 1000, unit: "followers", goal_status: "Completed", theme: "career", goal_completion_date: "2023-04-17")
+
+# end of seed
 puts "Seeded database"

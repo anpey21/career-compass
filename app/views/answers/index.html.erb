@@ -1,10 +1,41 @@
 <div class="parent">
   <div class="div1">
-    <div class="chart-title text-center" style="height: 10%;">Your Total Score</div>
-    <%= column_chart(@career_options_and_scores, id: "users-chart", colors: ["#e21d60", "#00bfbd"], label: "Cumulative Score", ytitle: "Weighted Score", height: "90%", width: "100%") %>
+    <div class="chart-title text-center" style="height: 10%;">Your Total Score
+      <div class="popover-container">
+        <i class="fas fa-info-circle ml-1 popover-style"></i>
+        <div class="popover-text">This graph shows your total score for each career option. To calculate this we have mulitplied your scores for the career option with the priority for each factor you gave.</div>
+      </div>
+    </div>
+    <%= column_chart(@career_options_and_scores,
+                      id: "users-chart",
+                      colors: ["#ed5187", "#2ba1ac"],
+                      label: "Cumulative Score",
+                      ytitle: "Weighted Score",
+                      height: "90%",
+                      width: "100%",
+                      library: {
+                        scales: {
+                          x: {
+                            title: {
+                              color: "#fff"
+                            },
+                            ticks: {
+                              color: "white"
+                            }
+                          },
+                          y: {
+                            title: {
+                              color: "#fff"
+                            },
+                            ticks: {
+                              color: "white"
+                            }
+                          }
+                        }
+                      }
+                    ) %>
   </div>
   <div class="div2">
-    <div class="welcome">Welcome <span class="pink-bold welcome pink"><%= current_user.name.capitalize %></span></div>
     <div class="middle">
       Your top scored career option is
       <div class="top-option"><%= @top_career_option %></div>
@@ -17,12 +48,62 @@
     </div>
   </div>
   <div class="div3">
-    <div class="chart-title text-center" style="height: 10%;">Your Priorities</div>
-    <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#e21d60"], min: 0, max: 10, xtitle: "Score", height: "90%", width: "90%", options: {color: "#fff", scales: {yAxes: [{display: false}],xAxes: [{scaleLabel: {display: true,labelString: 'Priority'}}]}}) %>
+    <div class="chart-title text-center" style="height: 10%;">Your Priorities
+      <div class="popover-container">
+        <i class="fas fa-info-circle ml-1 popover-style"></i>
+        <div class="popover-text">This graph gives you a visual representation of what you've told us you value in a career</div>
+      </div>
+    </div>
+    <%= bar_chart(@priorities_plucked_with_names_ordered_by_score, id: "bar-chart", colors: ["#ed5187"], min: 0, max: 10, xtitle: "Score", height: "90%", width: "90%",  library: {
+scales: {
+x: {
+title: {
+color: "#fff"
+},
+ticks: {
+color: "white"
+}
+},
+y: {
+title: {
+color: "#fff"
+},
+ticks: {
+color: "white"
+}
+}
+}
+}
+) %>
   </div>
   <div class="div4">
-    <div class="chart-title text-center"  style="height: 10%;">Your scores comparison</div>
-    <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#e21d60", "#00bfbd"],label: "Cumulative Score", ytitle: "Weighted Score", legend: true, height: "90%", width: "100%") %>
+    <div class="chart-title text-center"  style="height: 10%;">Your scores comparison
+      <div class="popover-container">
+        <i class="fas fa-info-circle ml-1 popover-style"></i>
+        <div class="popover-text">This chart shows you a comparison between your two options against each priority. The score is a weighted measure multiplying your score and your priority score</div>
+      </div>
+    </div>
+    <%= column_chart(@weighted_answers_with_job_title, id: "user-chart", colors: ["#ed5187", "#2ba1ac"],label: "Cumulative Score", ytitle: "Weighted Score", legend: true, height: "90%", width: "100%",  library: {
+scales: {
+x: {
+title: {
+color: "#fff"
+},
+ticks: {
+color: "white"
+}
+},
+y: {
+title: {
+color: "#fff"
+},
+ticks: {
+color: "white"
+}
+}
+}
+}
+) %>
   </div>
   <div class="div5">
     <div class="chart-title text-center"  style="height: 10%;">Recommended for you</div>

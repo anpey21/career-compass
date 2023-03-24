@@ -70,10 +70,10 @@ Answer.create(question_id: stability.id, career_option_id: two.id, score: 3)
 Answer.create(question_id: progression.id, career_option_id: two.id, score: 2)
 
 # Seeds for mentors index and show page
-# sara = Mentor.new(first_name: "Sarah", last_name: "Smith", bio: "I am a software engineer with 10 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Software Engineering", experience: 10, price_per_hour: 50, country: "United States", user: tom)
-# file = File.open(Rails.root.join("app/assets/images/sara.png"))
-# sara.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# sara.save
+sara = Mentor.new(first_name: "Sarah", last_name: "Smith", bio: "I am a software engineer with 10 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Software Engineering", experience: 10, price_per_hour: 50, country: "United States", user: tom)
+file = File.open(Rails.root.join("app/assets/images/sara.png"))
+sara.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+sara.save
 andreas = Mentor.new(first_name: "Andreas", last_name: "Smith", bio: "I am a data scientist with 5 years of experience. I have worked in a variety of industries including finance, healthcare, and education. I am passionate about helping others learn to code and have mentored many junior developers in my career. I am excited to help you learn to code and get your dream job!", field: "Web Development", experience: 5, price_per_hour: 50, country: "Ireland", user: tom)
 file = File.open(Rails.root.join("app/assets/images/Andreas.jpg"))
 andreas.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -97,17 +97,17 @@ larry.save
 
 # seed goals for sarah
 
-# Goal.create!(goal_name: "Complete Le Wagon Bootcamp", user_id: anna.id, start_value: 0, target_value: 1, current_value: 1, unit: "completed", goal_status: "Completed", theme: "career", goal_completion_date: "2021-12-31")
-# puts "goal seeded"
-# Goal.create!(goal_name: "Get a job as a Software Engineer", user_id: anna.id, start_value: 0, target_value: 1, current_value: 1, unit: "completed", goal_status: "Completed", theme: "career", goal_completion_date: "2022-04-25")
-# puts "goal seeded"
-# Goal.create!(goal_name: "Read 20 Books this Year", user_id: anna.id, start_value: 0, target_value: 20, current_value: 12, unit: "books", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-25")
-# puts "goal seeded"
-# Goal.create!(goal_name: "Take Career Compass Test", user_id: anna.id, start_value: 0, target_value: 1, current_value: 0, unit: "completed", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-17")
-# puts "goal seeded"
-# Goal.create!(goal_name: "Get 1000 readers on my blog", user_id: anna.id, start_value: 0, target_value: 1000, current_value: 300, unit: "readers", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-17")
-# puts "goal seeded"
-# Goal.create!(goal_name: "Get 1000 followers on my professional twitter", user_id: anna.id, start_value: 0, target_value: 1000, current_value: 1000, unit: "followers", goal_status: "Completed", theme: "career", goal_completion_date: "2023-04-17")
+Goal.create!(goal_name: "Complete Le Wagon Bootcamp", user_id: anna.id, start_value: 0, target_value: 1, current_value: 1, unit: "completed", goal_status: "Completed", theme: "career", goal_completion_date: "2021-12-31")
+puts "goal seeded"
+Goal.create!(goal_name: "Get a job as a Software Engineer", user_id: anna.id, start_value: 0, target_value: 1, current_value: 1, unit: "completed", goal_status: "Completed", theme: "career", goal_completion_date: "2022-04-25")
+puts "goal seeded"
+Goal.create!(goal_name: "Read 20 Books this Year", user_id: anna.id, start_value: 0, target_value: 20, current_value: 12, unit: "books", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-25")
+puts "goal seeded"
+Goal.create!(goal_name: "Take Career Compass Test", user_id: anna.id, start_value: 0, target_value: 1, current_value: 0, unit: "completed", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-17")
+puts "goal seeded"
+Goal.create!(goal_name: "Get 1000 readers on my blog", user_id: anna.id, start_value: 0, target_value: 1000, current_value: 300, unit: "readers", goal_status: "In Progress", theme: "career", goal_completion_date: "2023-04-17")
+puts "goal seeded"
+Goal.create!(goal_name: "Get 1000 followers on my professional twitter", user_id: anna.id, start_value: 0, target_value: 1000, current_value: 1000, unit: "followers", goal_status: "Completed", theme: "career", goal_completion_date: "2023-04-17")
 
 # end of seed
 puts "Seeded database"

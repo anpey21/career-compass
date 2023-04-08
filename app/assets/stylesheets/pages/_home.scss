@@ -1,11 +1,15 @@
 // Specific CSS for your home-page
+
+html {
+  scroll-behavior: smooth;
+}
 .hero-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(asset-path("staircase-high-res.jpg"));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(asset-path("newspiral.JPG"));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 100vh;
   color: $font-white;
   padding: 0;
   padding-top: 18vh;
@@ -68,24 +72,24 @@
 }
 
 .how-it-works-container {
-  height: 60vh;
+  height: 80vh;
 }
 .what-we-offer-container {
   background-image: url(asset-path("landingsunrise.png"));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 80vh;
 }
 
-.what-we-offer-body {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 50px;
-}
+// .what-we-offer-body {
+//   display: flex;
+//   justify-content: space-evenly;
+//   align-items: flex-start;
+//   text-align: center;
+//   padding-top: 40px;
+//   padding-bottom: 50px;
+// }
 
 .square-home-card-body {
   font-size: 16px;
@@ -252,10 +256,10 @@ img {
     font-size: 2vw;
   }
   .how-it-works-container {
-    height: 70vh;
+    height: 100vh;
   }
   .what-we-offer-container {
-    height: 85vh;
+    height: 100vh;
   }
   .what-we-offer-body {
     padding-top: 5px;
@@ -269,9 +273,7 @@ img {
   .cards-4 {
     grid-template-columns: 1fr;
   }
-  .arrows {
-    display: none;
-  }
+
   .card-image > img {
     width: 100px;
     height: 100px;
@@ -286,7 +288,7 @@ img {
     height: 100px;
   }
   .circle-card-text {
-    width: 20vw;
+    width: 50%;
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 2vw;
@@ -300,17 +302,17 @@ img {
   }
 
   .offer-card-text {
-    font-size: 2vw;
+    font-size:50%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   /* CSS styles for tablets */
 
   .hero-container {
-    height: 50vh;
+    height: 100vh;
   }
   .how-it-works-container {
-    height: 35vh;
+    height: 100vh;
   }
   .what-we-offer-container {
     height: 35vh;
@@ -339,6 +341,10 @@ img {
   .hero-container {
     height: 55vh;
     padding-top: 9vh;
+  }
+
+  .arrows {
+    display: none;
   }
   .how-it-works-container {
     height: 60vh;

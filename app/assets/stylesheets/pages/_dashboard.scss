@@ -196,3 +196,10 @@ a {
   color: $primary-pink !important;
   background-color: $bg-grey !important;
 }
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}

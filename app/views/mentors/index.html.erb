@@ -28,7 +28,7 @@
     <% @mentors.each do |mentor| %>
     <%= link_to mentor_path(mentor), class: "random" do %>
     <% url = "" %>
-      <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path mentor.photo.key,  :cloud_name => cloudname, height: 200, width: 350, crop: :fill %>')">
+      <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path mentor.photo.key, height: 200, width: 350, crop: :fill %>')">
         <div class="main-head-mentors"><%= mentor.first_name.capitalize %> </div>
           <div class="sub-head-mentors">
             <em><%= mentor.field %></em>

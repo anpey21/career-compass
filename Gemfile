@@ -80,5 +80,5 @@ group :test do
   gem "webdrivers"
 end
 
-
-gem 'cloudinary'
+# add cloudinary gem
+gem "cloudinary"

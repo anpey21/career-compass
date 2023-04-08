@@ -34,6 +34,9 @@
 
 .goal-card {
   display: flex;
+  flex-direction: inline-block;
+  margin: 20px;
+  width: 50%;
   padding-top: 0px;
   padding-bottom: 0px;
   padding-right: 0px;
@@ -117,7 +120,7 @@
   background-color: #222;
   border-radius: $border-radius;
   box-shadow: 2px 2px 5px #000000;
-  text-align: center;
+ align-items: left;
   margin-top: 30px;
   transition: all 0.3s ease-in-out;
 }
@@ -134,12 +137,13 @@
 }
 
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media (min-width: 100px) and (max-width: 420px) {
   .cards {
     grid-template-columns: 1fr;
   }
   .card-goal {
     height: 100px;
+    width: 90%;
   }
   .goal-details {
     display: none;
@@ -156,6 +160,7 @@
   }
   .card-goal {
     height: 100px;
+    width: 90%;
   }
   .goal-details {
     display: none;
@@ -169,13 +174,14 @@
   }
   .card-goal {
     height: 90px;
+    width: 90%;
   }
   .goal-details {
     display: none;
   }
 }
 
-// Large devices (desktops, 992px and up) Changing something to deploy
+// Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -183,9 +189,7 @@
 
   .card-goal {
     height: 90px;
-  }
-  .goal-details {
-    display: inline;
+    width:60%;
   }
 }
 
@@ -196,5 +200,6 @@
   }
   .card-goal {
     height: 90px;
+    width: 70%;
   }
 }

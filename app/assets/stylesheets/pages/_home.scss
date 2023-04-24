@@ -367,57 +367,57 @@ img {
     padding-top: 9vh;
   }
   .how-it-works-container {
-    height: 45vh;
-  }
-  .what-we-offer-container {
-    height: 45vh;
-  }
-  .testimonials-container {
-    height: 45vh;
-  }
-}
-@media only screen and (min-width: 1280px) and (max-width: 1800px) {
-  /* CSS styles for projectors and large screens */
-  .hero-container {
-    height: 90vh;
-    padding-top: 18vh;
-  }
-  .how-it-works-container {
-    height: 60vh;
+    height: 70vh;
   }
   .what-we-offer-container {
     height: 70vh;
   }
   .testimonials-container {
-    height: 60vh;
-  }
-
-  .circle-img {
-    width: 200px;
-    height: 200px;
+    height: 45vh;
   }
 }
+// @media only screen and (min-width: 1280px) and (max-width: 1800px) {
+//   /* CSS styles for projectors and large screens */
+//   .hero-container {
+//     height: 90vh;
+//     padding-top: 18vh;
+//   }
+//   .how-it-works-container {
+//     height: 60vh;
+//   }
+//   .what-we-offer-container {
+//     height: 70vh;
+//   }
+//   .testimonials-container {
+//     height: 60vh;
+//   }
 
-@media only screen and (min-width: 1801px) {
-  /* CSS styles for large screens */
-  .hero-container {
-    height: 90vh;
-    padding-top: 18vh;
-  }
-  .how-it-works-container {
-    height: 50vh;
-  }
-  .what-we-offer-container {
-    height: 50vh;
-  }
-  .testimonials-container {
-    height: 50vh;
-  }
-  .circle-img {
-    width: 200px;
-    height: 200px;
-  }
-}
+//   .circle-img {
+//     width: 200px;
+//     height: 200px;
+//   }
+// }
+
+// @media only screen and (min-width: 1801px) {
+//   /* CSS styles for large screens */
+//   .hero-container {
+//     height: 90vh;
+//     padding-top: 18vh;
+//   }
+//   .how-it-works-container {
+//     height: 60vh;
+//   }
+//   .what-we-offer-container {
+//     height: 60vh;
+//   }
+//   .testimonials-container {
+//     height: 60vh;
+//   }
+//   .circle-img {
+//     width: 200px;
+//     height: 200px;
+//   }
+// }
 
 // Smallest device
 /* @media (min-width: 100px) and (max-width: 380px) {
